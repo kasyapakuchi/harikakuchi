@@ -1,0 +1,5 @@
+package com.dsot.ccp.model;
+
+public class Role {
+
+}

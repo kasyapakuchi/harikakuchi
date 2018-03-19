@@ -1,0 +1,227 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<title>Sophia Andres</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6,h7 {font-family: "Roboto", sans-serif}
+a{text-decoration:none;}
+.textcolor{
+ color: #666699;
+}
+
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #bb72fc;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+
+
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: mediumpurple;
+  
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+.tpx{padding:2px;}
+</style>
+<body>
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large" style="background-color:#8e4fc9;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <a href="jasmine.html"><span class="w3-bar-item w3-left"><img src="images/jasmine.png" style="height:44px"></img></span></a>
+<div class="topnav dropdown" id="myTopnav">
+<li style="font-size:28px !important;list-style-type: none;" class="dropdown">  
+  <a href="jasmine.html" style="font-size:18px !important;">Dashboard</a>
+  <a href="#" style="font-size:18px !important;">Assets</a>
+  <a href="#" style="font-size:18px !important;">POSM</a></div>
+ <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;padding-left:10px;margin-top:14px;" name="search">
+
+    
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a href="cv.html"><div class="tooltip w3-round-xxlarge" style="margin-top:10px;padding: 1px 18px 1px 0px;height:46px;background-color:#bb72fc;float:right;color:white;font-size:18px"><img class="image w3-circle" src="images/avatar_hat.jpg" style="height:46px;"></img> Sofia Andres</div></a>
+
+
+
+</div>
+</div><!-- Page Container -->
+<div class="w3-content w3-margin-top" style="margin-top:73px !important;max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h3>Sofia</h3>
+          </div>
+        </div>
+        <div class="w3-container">
+					<div class="w3-container">
+							<div class="w3-half">
+							<p><i class="fa fa-briefcase fa-fw w3-margin-right w3-medium "></i>Brand Manager</p>
+							<p><i class="fa fa-home fa-fw w3-margin-right w3-medium "></i>California, US</p>
+							</div>
+							<div class="w3-half">
+							<p><i class="fa fa-envelope fa-fw w3-margin-right w3-medium "></i>sofia@dsot.com</p>
+							<p><i class="fa fa-phone fa-fw w3-margin-right w3-medium "></i>+1 888-435-5345</p>
+							</div>
+					</div>	
+					
+							
+								<div class="w3-container w3-half">
+							  <p class="w3-medium"><b><i class="fa fa-asterisk fa-fw w3-margin-right "></i>Tools</b></p>
+							  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>Salesforce</p>				  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>Social Networks</p>
+							  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>Marketing automation</p>
+			
+							  
+								</div>
+								<div class="w3-half">
+							  <p class="w3-medium w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right "></i>Languages</b></p>
+							  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>English</p>  
+							  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>Spanish</p>  
+							  <p><i class="fa fa-check-circle-o fa-fw w3-margin-right "></i>German</p>
+							  <br>
+							  </div>
+						  
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+		<h3 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge "></i>Work</h3>
+		<div class="w3-container">	
+			<div class="w3-row-padding">
+				<div class="w3-half">
+					<div class="w3-container">
+					  <h5 class="w3-opacity"><b>Job Role Description</b></h5>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Generating leads for the sales team</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Managing brand communication</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Generating product awareness</h6>
+					  <br><hr><br>
+					</div>
+					<div class="w3-container">
+					   <h5 class="w3-opacity"><b>Background</b></h5>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Reports To - CEO</h6>
+					  
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Industry - Chocolates</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Team - small team of 3 marketers</h6><hr>
+					  <br>
+					</div>
+
+				</div>
+				<div class="w3-half">
+					<div class="w3-container">
+					  <h5 class="w3-opacity"><b>Company Demographics</b></h5>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Based in the US or Canada</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Venture-backed, growth stage</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Culture centered around KPIs</h6>
+					 <br><hr><br>
+					</div>
+					<div class="w3-container">
+					  <h5 class="w3-opacity"><b>Goals</b></h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Meet quarterly lead generation goals</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Support corporate initiatives</h6>
+					  <h6 class=""><i class="fa fa-certificate fa-fw w3-margin-right w3-text-grey"></i>Launch of marketing campaigns</h6><hr>
+						
+					
+					<br>
+					</div>
+				</div>
+			</div>
+		</div>	
+      
+	  </div>
+
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<script>
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}</script>
+</body>
+</html>

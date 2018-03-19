@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+  }
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#jasimage{height:70px;align-items: center;}
+
+span.psw {
+    float: right;
+   padding-right:346px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column" >
+        <div class="imgcontainer">
+                <img id ="jasimage" src="jasmine.png" alt="Avatar">
+        </div>
+  </div>
+  <div class="column">
+    <div class="container">
+    <p><b>Welcome to Channel Collaboration!!</b></p>
+    <br>
+    <div class="w3-full styled-select green rounded" >
+<select style="height:52px;padding: 12px 20px;" id ="emp">
+    <option style="height:52px;padding: 12px 20px;">CPG Employee</option>
+    <option style="height:52px;padding: 12px 20px;">Distributor</option>
+    <option style="height:52px;padding: 12px 20px;">Retailer</option>
+ </select>
+</div>
+
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+   
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+
+    <span class="psw"><a href="#">Forgot password?</a></span>
+    
+    <button type="reset" style="background-color:#b87c51;margin:4% 0% 0% 0%;width:35%" onClick="jasmineLogin()">Login</button>
+     
+   
+   
+  
+  </div>
+
+
+  </div>
+</div>
+
+</body>
+</html>

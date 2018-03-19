@@ -1,0 +1,749 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<title>Assets</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="fa.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<style>
+html{ overflow-y: scroll;}
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+a, u {
+    text-decoration: none !important;
+}
+#image1{width:90%;}
+
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 100%;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+
+select#soflow-color {
+   color: #fff;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+ul {
+  list-style-type: none !important;
+}
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.image{
+  position: relative;
+}
+.image a{
+  display: block;      
+  position: absolute;
+}
+#imr{width:100%;}
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #d48d5a;
+  color: black;
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+#logo{
+display:none;
+}
+#lognav{float:left;width:33%;}
+}
+#imr{width:100%;}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+#lognav{float:left;}
+#lognav3{display:none;}
+#imr{width:100%;}
+    .col-25, .col-75, input[type=reset] {
+        width: 100%;
+        margin-top: 0;
+    }
+#image1{height:90%;} 
+.topnav input[type=text] {
+        float: none;
+        display: none;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+	
+    }
+}
+.topnav input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+width:40%;
+ -moz-border-radius:20px; /* Firefox */
+    -webkit-border-radius: 20px; /* Safari, Chrome */
+    -khtml-border-radius: 20px; /* KHTML */
+    border-radius: 20px; /* CSS3 */
+    behavior:url("border-radius.htc");
+}
+
+.green   { background-color: #b87c51; }
+.green select   { background-color:#b87c51;color:white; }
+
+
+//update form
+* {
+    box-sizing: border-box;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+}
+
+input[type=reset] {
+    background-color: #b87c51;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.brd ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin-left:-30px;
+ 
+}
+
+.brd li {
+ color:black;
+    
+}
+
+.brd li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.brd li a:hover, .dropdown:hover .dropbtn {
+    background-color: teal;
+}
+
+.brd li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 499px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+#btn19{visibility:hidden;}
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #b87c51;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+
+
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+//new nav
+<div class="w3-bar w3-top w3--blue w3-large" style="z-index:4;background-color:#b87c51">
+
+<div class="topnav dropdown" id="myTopnav">
+<li style="list-style-type: none;" class="dropdown">  
+  <a href="#"><img src="jasmine.png" class="w3-margin-right" style="height:28px"></a>
+  <a href="jasmine.html">Dashboard</a>
+ <a href="jasmineconnect.html" style="background-color:#994d00;">Assets</a>
+  <a href="#">POSM</a>
+
+        <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;top:2px;" name="search">
+    
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a id ="lognav" href="#" class="fa fa-user" style="height:100%;padding: 21px 18px;float:right;color:white"></a>  
+ 
+    <a id ="lognav3"  class="fa" style="height:100%;padding: 21px 18px;float:right;color:white">Hello, Sofia</a>
+   </li>
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunctionNav()">&#9776;</a>
+
+  <span class="w3-bar-item w3-right" id="logo" ></span>
+</div></div>
+//new nav
+<!-- Sidebar/menu -->
+
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:10px;margin-top:43px;">
+ <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-twothird">
+<br>
+     <div id ="imr" class="image" ><button id="btn19" class="w3-block w3-teal " style="float:right;margin:30px 20px 0px 0px;padding: 10px 10px;width:20%" onclick="document.getElementById('image1').src='region1.jpg';document.getElementById('image1').style.width='90%';">Show Full Map</button>	
+<img id="image1" src="region1.jpg" alt="image" usemap="#mapmap" hidefocus="true">
+      		  <a href="#" onclick="document.getElementById('image1').src='california2.jpg';document.getElementById('btn19').style.visibility='visible';document.getElementById('retid').selectedIndex='1';document.getElementById('image1').style.width='50%';" style="top: 10%; left: 0%; width: 15%; height: 90%;"></a>
+      		<a href="#" style="top: 10%; left: 16%; width: 35%; height: 95%;"></a>
+      		<a href="#" style="top: 10%; left: 40%; width: 15%; height: 95%;"></a>
+
+      	</div>
+      </div>
+
+<div class="w3-third w3-container">
+</br>
+</br>
+<div class="w3-row-padding" style="padding:0px 20px;background-color:teal; width:99%;margin:8px">
+<h5 style="color:white"><b>UPLOAD</b></h5>
+</br><span style="color:white">BROWSE
+  <input type="file" name="pic" accept="/*"></span> 
+</form>
+<div class="w3-row-padding" style="margin:0 -16px">
+<div class="w3-half w3-container">	
+</br>
+
+<div class="w3-half">
+<h6 style="color:white">SELECTION</h6>	
+<select style="width:150px; color:black">
+  <option value="volvo">Main Category</option>
+  <option value="saab">Dark Chocolates</option>
+<option value="saab">Pre-Melted Chocolate</option>
+<option value="saab">Semi-Sweet Chocolate</option>
+<option value="saab">White Chocolate</option>
+<option value="saab">Milk Chocolate</option>
+<option value="saab">Bittersweet Chocolate</option>
+</select>
+</br></br>
+<select style="width:150px; color:black">
+  <option value="volvo">Distributors</option>
+  <option value="saab">Cooper Inc</option>
+  <option value="opel">Thomas Ltd.</option>
+  <option value="audi">California Distribution</option>
+  <option value="audi"></option>
+</select><br \><br>
+<select  style="width:150px; color:black">
+  <option value="audi">Retailers</option>
+  <option value="volvo">Walmart</option>
+  <option value="saab">Costco</option>
+  <option value="opel">The Home Depot</option>
+  <option value="audi"></option>
+
+</select>
+
+</div>
+</br>
+</div>
+<div class="w3-half w3-container">
+<h6 style="color:white;visibility:hidden;">SELECTION</h6>
+</br>
+<select style="width:150px; color:black">
+  <option value="volvo">Brand</option>
+  <option value="saab">Melys</option>
+  <option value="opel">Dulce</option>
+  <option value="audi">Marvel</option>
+</select>
+</br>
+<br>
+<select style="width:150px; color:black">
+  <option value="volvo">Sub Category</option>
+  <option value="saab">Organic</option>
+  <option value="opel">Vegan</option>
+  <option value="audi">Flavoured</option>
+<option value="audi">Premium</option>
+</select>
+<br>
+
+
+</br>
+<select id="retid" style="width:150px; color:black">
+  <option value="audi">Region</option>
+  <option value="volvo">California</option>
+  <option value="saab">Arkansas</option>
+  <option value="opel">Colorado</option>
+
+</select></br>
+</div>
+</br></div><br>
+<a href="#home" class="dropbtn w3-block w3-teal w3-center" style="width:95%;" onclick="update_alert()">UPLOAD</a>
+
+</br>
+</br>
+
+</div><br>
+<div >
+<ul class="brd" style="padding-left: 0px;width:95%">
+  <li class="dropdown brd" style="padding-left: 10px;width:106%">
+    <a href="javascript:void(0)" class="brd.dropbtn w3-block w3-teal">Retailers List</a>
+    <div class="dropdown-content">
+	<ol>
+		<li class="brd">Walmart</li></br>
+		<li class="brd">Costco</li></br>
+		<li class="brd">The Home Depot</li>
+	</ol>
+	
+    </div>
+  </li>
+	</br></br>
+  <li class="dropdown brd" style="padding-left: 10px;width:106%">
+    <a href="javascript:void(0)" class="brd.dropbtn w3-block w3-teal">Distributors List</a>
+    <div class="dropdown-content">
+      <ol>
+		<li class="brd">Cooper Inc.</li></br>
+		<li class="brd">Thomas Ltd.</li></br>
+		<li class="brd">California Distributors</li>
+	</ol>
+    </div>
+  </li>
+	</br></ul>
+</div>
+</div>
+  <!-- End third -->
+</br>
+</div>      
+
+
+</div> 
+</div>
+  <!-- End page content -->
+</div>
+
+<script>
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+//update alert
+function update_alert(){
+
+swal({
+  title: "Details Uploaded",
+  text: "Details uploaded successfully!",
+  type: 'success',
+}).then(function() {
+    window.location = "jasmineconnect.html";
+})
+}
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12, 12, 13, 16, 10,],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Aer", "Kat", "M"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [247,74,433]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Mars", "Jo", "Fin"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [2478,734,433]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+    }
+});
+
+//new nav
+function myFunctionNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["Mar","Jun","Sep","Dec"],
+    datasets: [{
+        data: [60,70,138,170],
+        label: "Sales Growth (%)",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+    }
+  }
+});
+
+
+
+var oilCanvas = document.getElementById("oilChart");
+var oilCanvas2 = document.getElementById("oilChart2");
+var oilCanvas3 = document.getElementById("oilChart3");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var oilData = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [133.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData2 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [53.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData3 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [90.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var chartOptions = {
+  rotation: Math.PI,
+  cutoutPercentage: 50,
+  circumference: 2*Math.PI,
+  legend: {
+    position: 'left'
+  },
+  animation: {
+    animateRotate: false,
+    animateScale: true
+  }
+};
+
+var pieChart = new Chart(oilCanvas, {
+  type: 'doughnut',
+  data: oilData,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas2, {
+  type: 'doughnut',
+  data: oilData2,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas3, {
+  type: 'doughnut',
+  data: oilData3,
+  options: chartOptions
+});
+
+
+	
+</script>
+</body>
+</html>

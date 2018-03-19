@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><style>
+<style>
+html{background-color:white;}
+html,body { height: 100%; width: 100%; margin: 0; }
+html,body,h1,h2,h3,h4,h5 {font-family: 'Lato', sans-serif;!important; }
+h6 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #bb72fc;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+
+
+
+//cal
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+p{}
+a{display: block;    font-size: 13px;
+    line-height: 1.4;text-decoration: none !important;}
+body {font-family: 'Lato', sans-serif;!important;font-size:14px;}
+
+.month {
+    padding: 3px 25px;
+    width: 100%;
+    background: #F4ECF7;
+
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+ 
+    font-size: 15px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 0px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 0px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: white;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #F4ECF7;
+    color: black !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: mediumpurple;
+  
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+.tpx{padding:2px;}
+</style>
+<body>
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large" style="height:10vh;background-color:#8e4fc9;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <a href="jasmine.html"><span class="w3-bar-item w3-left"><img src="images/jasmine.png" style="height:44px"></img></span></a>
+<div class="topnav dropdown" id="myTopnav">
+<li style="font-size:28px !important;list-style-type: none;" class="dropdown">  
+  <a href="jasmine.html" style="font-size:18px !important;background-color:#bb72fc">Dashboard</a>
+  <a href="#" style="font-size:18px !important;">Assets</a>
+  <a href="#" style="font-size:18px !important;">POSM</a></div>
+ <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;padding-left:10px;margin-top:14px;" name="search">
+
+    
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a href="cv.html"><div class="tooltip w3-round-xxlarge" style="margin-top:-40px;padding: 1px 18px 1px 0px;height:46px;background-color:#bb72fc;float:right;color:white;font-size:18px"><img class="image w3-circle" src="images/avatar_hat.jpg" style="height:46px;"></img> Sofia Andres</div></a>
+
+
+
+</div>
+<!-- Sidebar/menu -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:00px;margin-top:40px;">
+
+  <!-- Header -->
+  </div>
+
+<!--MAIN-->
+<div class="w3-full" >
+<div class="w3-quarter" style="width:18%;margin-left:10px !important;margin-top:30px !important;margin:2px;">
+   <div class="image" >
+<div class="w3-container" style="height:27px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Distributors</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:170px;background-color:white" src="images/topd.jpg" alt="image" width="100%"  usemap="#mapmap" hidefocus="true"/>
+        </div>
+
+   <div class="image" >
+<div class="w3-container" style="height:27px;margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Products</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:158px;" src="images/topp.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+</div>    
+
+
+   <div class="image" >
+<div class="w3-container" style="height: 100%;margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Retailers</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:150px;" src="images/topr.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  </div>    
+</div>
+</div>
+
+<div class="w3-container w3-threequarter" style="width:81%;margin-left:-10px !important;margin-right:0px !important;margin-top:17px !important;">
+   <div class="w3-half" style="width:60%;"><a href="ca.html">
+  <br><img src="images/region.png"  style="width:99%;height:380px;" alt="image"  usemap="#mapmap" hidefocus="true"/>
+<br>
+
+ <div class="w3-full image" >
+   <table style="height:170px;margin-top:8px;width:99.5%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+  <tr>
+    <td colspan="2" style="padding:3px;height:8px;text-align:center;background-color:#e6d8f3;"><i><b>YTD Performance</b></i></td>
+<td colspan="3"  style="padding:3px;height:8px;text-align:center;background-color:#e6d8f3;"><i>Previous Year</i></td>
+<td colspan="3"  style="padding:3px;height:8px;text-align:center;background-color:#e6d8f3"><i>Current Year</i></td>
+  </tr>
+<tr>
+        <th style="padding:3px;padding-left:6px;"> Region</th>
+ <th style="padding:3px;">Est. Market</th>
+         <th style="padding:3px;">Revenue</th>
+ <th style="padding:3px;">Volume</th>        
+ <th style="padding:3px;">Market Share</th>                   
+<th style="padding:3px;">Revenue</th>
+ <th style="padding:3px;">Volume</th>        
+ <th style="padding:3px;">Market Share</th>         </tr>
+
+<tr >
+
+
+        <td style="text-align:center;padding:3px;">AR</td>
+<td style="text-align:center;padding:3px;">$2M</td>
+<td style="text-align:center;padding:3px;">$0.80M</td> 
+<td style="text-align:center;padding:3px;">5000</td> 
+<td style="text-align:center;padding:3px;">40%</td> 
+<td style="text-align:center;padding:3px;">$0.70M <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td> 
+<td style="text-align:center;padding:3px;">4000 <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td> 
+<td style="text-align:center;padding:3px;">35% <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td>        
+</tr>
+<tr>
+      <td style="text-align:center;padding:3px;">CA</td>
+<td style="text-align:center;padding:3px;">$3M</td>
+<td style="text-align:center;padding:3px;">$0.30M</td> 
+<td style="text-align:center;padding:3px;">3000</td> 
+<td style="text-align:center;padding:3px;">17%</td> 
+<td style="text-align:center;padding:3px;">$0.40M <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td> 
+<td style="text-align:center;padding:3px;">2000 <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td> 
+<td style="text-align:center;padding:3px;">13% <span class="fa fa-caret-down" style="font-size:20px;color:red"></span></td>        
+</tr>      <tr>
+        <td style="text-align:center;padding:3px;">CO</td>
+<td style="text-align:center;padding:3px;">$2M</td>
+<td style="text-align:center;padding:3px;">$1.20M</td> 
+<td style="text-align:center;padding:3px;">7000</td> 
+<td style="text-align:center;padding:3px;">60%</td> 
+<td style="text-align:center;padding:3px;">$1.30M <span class="fa fa-caret-up" style="font-size:20px;color:green"></span></td> 
+<td style="text-align:center;padding:3px;">8000 <span class="fa fa-caret-up" style="font-size:20px;color:green"></span></td> 
+<td style="text-align:center;padding:3px;">65% <span class="fa fa-caret-up" style="font-size:20px;color:green"></span></td>        
+</tr>    </table>
+<a style="float:right;margin-right:0px;color:blue">more...</a>
+</div> 
+</div>
+
+  <div class="w3-half image"  style="height: 100%;width:40%">
+<div class="w3-half image" >
+
+<div class="w3-full" style="height: 100%;margin:8px;margin-left:3px !important;margin-top:6px !important;box-shadow:1px 1px lightgrey">
+<div class="image" >
+
+
+<div class="w3-container" style="margin-top:13px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Sales Trends</i></h6></div>
+  <img style="height:170px;box-shadow:1px 1px lightgrey;margin-left:3px !important;margin-top:0px !important;" src="images/salestrend.jpg" alt="image" width="98.5%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+
+  
+<div class="w3-container" style="margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Promotions Comparision</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:158px;" src="images/campaign2.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+</div>  
+<div class="w3-container" style="margin-top:6px !important;margin-bottom:0px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Promotions Fund</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:150px;" src="images/pf2.JPG" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+
+
+
+</div>
+
+
+
+
+</div>
+
+  <div style="margin-left:0px;" class="w3-half" >
+    <div class="w3-full image" >
+<div class="w3-container" style="margin:0px;margin-left:0px !important;width:99.5%;margin-top:14px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6 style="padding:0px !important;"><i>Completed Promos(NetROI)</i></h6></div>
+ <table style="height:156px;margin:10px;margin-left:0px !important;margin-top:0px;width:100%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+<tr>
+        <th style="width:46%;padding-left:10px;">Promo</th>
+ <th style="padding:3px;">Net ROI</th>
+         <th style="padding:3px;">Sales Units</th>       </tr>
+
+<tr >
+
+<td style="padding-left:10px !important;padding:3px;">V Day</td> 
+        <td style="text-align:center;padding:3px;">1</td>
+<td style="text-align:center;padding:3px;">8000</td>
+
+</tr>
+
+<tr >
+
+<td  style="padding-left:10px !important;padding:3px;">Gifting Day</td> 
+        <td style="text-align:center;padding:3px;">1</td>
+<td style="text-align:center;padding:3px;">8000</td>
+
+</tr>
+<tr >
+
+<td style="padding-left:10px !important;padding:3px;">Womens Day</td> 
+        <td style="text-align:center;padding:3px;">1</td>
+<td style="text-align:center;padding:3px;">8000</td>
+
+</tr>
+</table>
+<a style="margin-left:160px;color:blue;margin-top:-13px;" href=#">more..</a>
+
+
+
+<div class="w3-container" style="margin-top:6px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6 ><i>Notifications</i></h6></div>
+<div class="w3-container" style="height:156px;font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="ManagerPromoOpenView.html"><span class="fa fa-certificate" style="color:purple;"></span> Summer Promo details updated.<sup style="color:red">New</sup></a><a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple"></span> Meeting Postponed.</a>
+<a style="margin:10px 1px;font-size:14px;" href="#" ><span class="fa fa-certificate" style="color:purple"></span> Loyality Programe.</a>
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple"></span> Campaign Planning.</a>
+
+<a  href="notifications.html" style="margin-top:-6px;float:right;color:blue;">Details...</a>
+</div>
+    
+ <div class="w3-container" style="margin-top:6px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6 ><i>Shortcuts</i></h6></div>
+<div class="w3-container" style="height:148px;font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple;"></span> Regions List.</a><a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple"></span> Retailers List</a>
+<a style="margin:10px 1px;font-size:14px;"  href="#"><span class="fa fa-certificate" style="color:purple;"></span> Distributors List</a>
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple;"></span> Products List.</a>
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple;"></span> Promotions List.</a>
+</div></div></div>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 ">
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+
+
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Dark", "Premelted", "SemiSweet", "White", "Milk", "BitterSweet"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12,14, 12, 13, 16, 10,9],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+legend: {
+    display: false,
+},
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+
+
+//
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["Q1","Q2","Q3","Q4"],
+    datasets: [{
+        data: [60,70,138,170],
+        label: "Sales Growth (%)",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+    },
+legend: {
+    display: false,
+}
+  }
+});
+
+//
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Organic", "Vegan", "Flavoured","Premium"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","pink"],
+        data: [24,22,34,20]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+
+    ,
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Melys", "Dulce", "Marvel"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [41,39,20],
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      },
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}
+
+</script>
+
+</body>
+</htm

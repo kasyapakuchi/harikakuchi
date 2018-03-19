@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><style>
+html{background-color:white;}
+html,body,h1,h2,h3,h4,h5 {font-family: 'Lato', sans-serif;!important; }
+h6 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+//cal
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+p{}
+a{display: block;    font-size: 13px;
+    line-height: 1.4;text-decoration: none !important;}
+body {font-family: 'Lato', sans-serif;!important;font-size:14px;}
+
+.month {
+    padding: 3px 25px;
+    width: 100%;
+    background: #a65ce6;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 15px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 0px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 0px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: white;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #db70b7;
+    color: white !important
+}
+
+.days li .active2 {
+    padding: 5px;
+    background: #7095db;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
+</style>
+<body>
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large" style="background-color:#8e4fc9;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <span class="w3-bar-item w3-left"><a href=""><img src="logo.png" style="height:46px"></img></span>
+
+
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<div class="tooltip w3-round-xxlarge" style="margin-top:7px;padding: 1px 18px 1px 0px;height:46px;background-color:#bb72fc;float:right;color:white;font-size:18px !important"><a href="jasmine.html"><img  class="image w3-circle" src="avatar_hat.jpg" style="height:46px;"></img> Sofia Andres</a></div>
+
+</div>
+<!-- Sidebar/menu -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:00px;margin-top:40px;">
+
+  <!-- Header -->
+  </div>
+
+<!--MAIN-->
+<div class="w3-full">
+<div class="w3-quarter" style="width:23%;margin-left:10px !important;margin-top:30px !important;margin:2px;">
+   <div class="image" >
+<div class="w3-container" style="background-color:pink;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Select Period</i></div>
+<form>
+<select id="regionS" class="w3-select" name="option">
+  <option value="1">Q1 Jan-Mar</option>
+  <option value="2">Q2 Apr-Jun</option>
+  <option value="3">Q3 Jul-Sep</option>
+<option value="3">Q4 Oct-Dec</option>
+</select></form><br>
+<div class="w3-container" style="background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Distributors</i></h6></div>
+  <img style="height:150px;background-color:white" src="topd.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+        </div>
+
+
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Campaign Performance</i></h6></div>
+  <img style="height:150px;" src="campaign.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  </div>    
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Products</i></h6></div>
+  <img  style="height:176px;" src="topp.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  <a href="ca.html" style="top: 10%; left: 0%; width: 15%; height: 95%;"></a>
+  <a href="co.html" style="top: 10%; left: 16%; width: 35%; height: 95%;"></a>
+  <a href="ar.html" style="top: 10%; left: 40%; width: 15%; height: 95%;"></a>
+</div>    
+</div>
+</div>
+
+<div class="w3-container w3-threequarter" style="width:76%;margin-left:-10px !important;margin-right:0px !important;margin-top:17px !important;">
+   <div class="w3-half image" style="width:70%">
+  <br><a href="ca.html"><img style="height:350px" src="region.png" alt="image" width="99%" height:"50%" usemap="#mapmap" hidefocus="true"/></a>
+  
+
+ <div class="w3-half image" style="width:49%;">
+<div class="w3-container" style="width:98%;margin-top:6px !important;background-color:#a65ce6;color:white;box-shadow:0px 0px lightgrey">
+<h6 style=""><i>Top Q3 Sales by Product</i></h6></div>
+   <table style="width:98%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+<tr>
+        <th style="color:;">Product</th>
+ <th style="color:;">Quantity</th>
+ <th style="color:;">Revenue</th>
+      </tr>
+
+<tr>
+        <td style="color:;">Mega</td>
+	<td style="color:;">2.176K</td>
+<td style="color:;">235.98K</td>      
+</tr>
+      <tr>
+  <td style="color:;">Crispy</td>
+	<td style="color:;">1.976K</td>
+<td style="color:;">205.18K</td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Peanut</td>
+	<td style="color:;">1.103K</td>
+<td style="color:;">185.98K</td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Pretzel</td>
+	<td style="color:;">1.103K</td>
+<td style="color:;">175.18K</td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Milk</td>
+	<td style="color:;">1.103K</td>
+<td style="color:;">164.92K</td>      
+
+      </tr>
+    </table><a  href="#" style="float:right;color:blue;padding:10px 10px;">More...</a>
+  </div> 
+
+ <div class="w3-half image" style="width:49%">
+<div class="w3-container" style="width:100%;margin-top:6px !important;background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Under performing Regions</i></h6></div>
+   <table style="box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+<tr>
+        <th style="color:;">Region</th>
+ <th style="color:;">Target %</th>
+      </tr>
+
+<tr>
+        <td style="color:;">California</td>
+<td style="color:;">79%  <span style="color:red;font-size:18px;" class="fa fa-sort-down"></span></td>      
+</tr>
+      <tr>
+  <td style="color:;">Iowa</td>
+<td style="color:;">81%   <span style="color:red;font-size:18px;" class="fa fa-sort-down"></span></td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Pennsylvania</td>
+<td style="color:;">83%   <span style="color:red;font-size:18px;" class="fa fa-sort-down"></span></td>      
+
+      </tr>
+  <tr>
+  <td style="color:;">Florida</td>
+<td style="color:;">87%   <span style="color:red;font-size:18px;" class="fa fa-sort-down"></span></td>      
+
+      </tr>
+  <tr>
+  <td style="color:;">Georgia</td>
+<td style="color:;">83%   <span style="color:red;font-size:18px;" class="fa fa-sort-down"></span></td>      
+
+      </tr>
+ 
+   </table>
+<a  href="#" style="float:right;color:blue;padding:10px 10px;">More...</a>
+</div> 
+
+
+</div>
+
+  <div class="w3-half image"  style="width:35%">
+<div class="w3-half image" >
+<div class="w3-container" style="margin:10px;margin-left:3px !important;margin-top:13px !important;background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6><i>Sales Trends</i></h6></div>
+  <img style="height:130px;margin-left:3px !important;margin-top:-10px !important;" src="salestrend.jpg" alt="image" width="95%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+
+
+<div class="w3-full" style="margin:10px;margin-left:3px !important;margin-top:6px !important;box-shadow:1px 1px lightgrey">
+<div class="w3-container" style="background-color:#b004ff;color:white;box-shadow:1px 1px lightgrey">
+<h6 ><i>Connect</i></h6></div>
+<div class="w3-container" style="overflow-y:auto;margin-top:10px;font-size:14px;background-color:white;box-shadow:1px 1px lightgrey">
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Benedict Paul<span style="font-size:18px;color:green" class="w3-right fa fa-comment" onclick="document.getElementById('id01').style.display='block'"></span>
+</p>
+
+<div id="id01" class="w3-modal" style="margin:0px !important">
+    <div class="w3-modal-content" >
+      <div class="w3-container" style="margin:0px !important">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form  class="w3-container w3-card-5 margin:10px !important" >
+<h2 class="w3-center">Send Message</h2>
+ 
+<div class="w3-row w3-section">
+ 
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+<p>+1 508 456456</p>
+    <div class="w3-rest">
+      
+    </div>
+</div>
+
+
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px;"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" style="height:100px" name="message" type="text" placeholder="Message">
+    </div>
+</div>
+
+<button class="w3-button w3-block w3-section w3-ripple w3-padding" style="background-color:mediumpurple;color:white !important">Send</button>
+</div></div></div>
+
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Jame Watt<span style="font-size:18px;color:green" class="w3-right fa fa-comment" onclick="document.getElementById('id01').style.display='block'"></span></p>
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Thomas Edward<span style="font-size:18px;color:green" class="w3-right fa fa-comment" onclick="document.getElementById('id01').style.display='block'"></span></p>
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Robert John<span style="font-size:18px;color:green" class="w3-right fa fa-comment" onclick="document.getElementById('id01').style.display='block'"></span></p>
+</div>
+<div class="w3-container" style="margin-top:6px;background-color:#a65ce6;color:white;box-shadow:1px 1px lightgrey">
+<h6 ><i>Notifications</i></h6></div>
+<div class="w3-container" style="font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple"></span> Meeting Postponed.</a>
+<a style="margin:10px 1px;font-size:14px;" ><span class="fa fa-certificate" style="color:purple"></span> Loyality Programe.</a>
+<a style="margin:10px 1px;font-size:14px;" href="#"><span class="fa fa-certificate" style="color:purple"></span> Campaign Planning.</a>
+<a style="margin:10px 1px;font-size:14px;" href="ManagerPromoOpen.html"><span class="fa fa-certificate" style="color:purple"></span> Promo details updated.</a>
+<a  href="notifications.html" style="float:right;color:blue;padding:10px 10px;">Details...</a>
+
+</div></div></div>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 ">
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+
+
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Dark", "Premelted", "SemiSweet", "White", "Milk", "BitterSweet"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12,14, 12, 13, 16, 10,9],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+legend: {
+    display: false,
+},
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+
+
+//
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["Q1","Q2","Q3","Q4"],
+    datasets: [{
+        data: [60,70,138,170],
+        label: "Sales Growth (%)",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+    },
+legend: {
+    display: false,
+}
+  }
+});
+
+//
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Organic", "Vegan", "Flavoured","Premium"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","pink"],
+        data: [24,22,34,20]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+
+    ,
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Melys", "Dulce", "Marvel"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [41,39,20],
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      },
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}</script>
+
+</body>
+</html>

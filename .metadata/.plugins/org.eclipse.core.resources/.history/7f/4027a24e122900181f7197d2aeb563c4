@@ -1,0 +1,1049 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>California</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="fa.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+     <link href="chatbootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="chatbootstrap.min.js"></script>
+        <script src="jq.min.js"></script>
+<style>
+html{background-color:white;}
+html, body {
+   height: 100% !important;
+}
+html,body,h1,h2,h3,h4,h5 {font-family: 'Lato', sans-serif;!important; }
+h6 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.fa{color:purple;}
+.fa-envelope{color:#c9aa4f}
+.fa-phone-square{color:#403152}
+.fa-calendar{color:#e46c0a}
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #bb72fc;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+
+
+
+//cal
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+p{}
+a{display: block;    font-size: 13px;
+    line-height: 1.4;text-decoration: none !important;}
+body {font-family: 'Lato', sans-serif;!important;font-size:14px;}
+
+.month {
+    padding: 3px 25px;
+    width: 100%;
+    background: #F4ECF7;
+
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+ 
+    font-size: 15px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 0px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 0px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: white;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #F4ECF7;
+    color: black !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
+.col-25 {
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+margin-left:5%;
+}
+
+.col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+margin-right:5%;
+}
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: mediumpurple;
+  
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+//chat
+   .mytext{
+    border:0;padding:10px;background:whitesmoke;
+}
+.text{
+    width:75%;display:flex;flex-direction:column;	
+}
+.text > p:first-of-type{
+    width:100%;margin-top:0;margin-bottom:auto;line-height: 13px;font-size: 12px;
+}
+.text > p:last-of-type{
+    width:100%;text-align:right;color:silver;margin-bottom:-7px;margin-top:auto;
+}
+.text-l{
+    float:left;padding-right:10px;
+}        
+.text-r{
+    float:right;padding-left:10px;
+}
+.avatar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:25%;
+    float:left;
+    padding-right:10px;
+}
+.macro{
+    margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+}
+.msj-rta{
+    float:right;background:whitesmoke;
+}
+.msj{
+    float:left;background:white;
+}
+.frame{
+    background:#e0e0de;
+    height:450px;
+    overflow:hidden;
+    padding:0;
+}
+.frame > div:last-of-type{
+    position:absolute;bottom:5px;width:100%;display:flex;
+}
+ul {
+    width:100%;
+    list-style-type: none;
+    padding:18px;
+    position:absolute;
+    bottom:32px;
+    display:flex;
+    flex-direction: column;
+
+}
+.msj:before{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:-14px;
+    position:relative;
+    border-style: solid;
+    border-width: 0 13px 13px 0;
+    border-color: transparent #ffffff transparent transparent;            
+}
+.msj-rta:after{
+    width: 0;
+    height: 0;
+    content:"";
+    top:-5px;
+    left:14px;
+    position:relative;
+    border-style: solid;
+    border-width: 13px 13px 0 0;
+    border-color: whitesmoke transparent transparent transparent;           
+}  
+input:focus{
+    outline: none;
+}        
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #d4d4d4;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #d4d4d4;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #d4d4d4;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #d4d4d4;
+}  
+
+
+.chat-box {
+    position:fixed;
+    right:15px;
+    bottom:0;
+    box-shadow:0 0 0.1em #000;
+
+}
+
+.chat-closed {
+    width: 250px;
+    height: 35px;
+    background: #8e4fc9;
+    line-height: 35px;
+    font-size: 18px;
+    text-align: center;
+    border:1px solid #777;
+    color:white;
+}
+
+.chat-closed2 {
+}
+
+.chat-header {
+    width: 250px;
+    height: 35px;
+    background: #8e4fc9;
+    line-height: 33px;
+    text-indent: 20px;
+    border:1px solid #777;
+    border-bottom:none;
+color:white;
+}
+
+.chat-content{
+    width:250px;
+    height:300px;
+    background:#ffffff;
+    border:1px solid #777;
+    word-wrap: break-word;
+}
+
+.box{
+background-image: url("jasmine.jpg");
+    width:33px;
+    height:34px;
+    background-image:();
+    float:left;
+    position:relative;
+}
+
+.hide {
+    display:none;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot2 {
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+//chat
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+.tpx{padding:2px;}
+
+
+
+</style><body >
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large" style="background-color:#8e4fc9;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <a href="jasmine.html"><span class="w3-bar-item w3-left"><img src="jasmine.png" style="height:44px"></img></span></a>
+<div class="topnav dropdown" id="myTopnav">
+<li style="font-size:28px !important;list-style-type: none;" class="dropdown">  
+  <a href="jasmine.html" style="font-size:18px !important;background-color:#bb72fc">Dashboard</a>
+  <a href="#" style="font-size:18px !important;">Assets</a>
+  <a href="#" style="font-size:18px !important;">POSM</a></div>
+ <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;padding-left:10px;margin-top:14px;" name="search">
+
+    
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a href="cv.html"><div class="tooltip w3-round-xxlarge" style="margin-top:-40px;padding: 1px 18px 1px 0px;height:46px;background-color:#bb72fc;float:right;color:white;font-size:18px"><img class="image w3-circle" src="avatar_hat.jpg" style="height:46px;"></img> Sofia Andres</div></a>
+
+
+
+</div>
+<!-- Sidebar/menu -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:0px !imortant;margin-top:40px;">
+ 
+  <div >
+    <div class="w3-row-padding" style="margin:0 -16px">
+     </div>
+<div class="w3-full">
+<div class="w3-quarter" style="width:18%;margin-left:10px !important;margin-top:30px !important;margin:2px;">
+   <div class="image" >
+<div class="w3-container" style="background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Distributors - CA</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:170px;background-color:white" src="topd.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+        </div>
+
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Products - CA</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:158px;" src="topp.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+</div>    
+
+
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Performing Retailers - CA</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:150px;" src="topr.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  </div>    
+</div>
+</div>
+
+<div class="w3-container w3-threequarter" style="width:81%;margin-left:-10px !important;margin-right:0px !important;margin-top:17px !important;">
+   <div class="w3-half image" style="width:60%">
+  <br><img style="height:378px" src="ca22.png"   alt="image" width="99%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+<br>
+
+ <div class="w3-half image" >
+   <table id="distributors" style="height:170px;margin-top:8px;width:99.5%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+  <tr>
+    <td  style="background-color:#e6d8f3;"><i><b>Distributors</b></i></td>
+  </tr>
+
+
+<tr>
+        <td>Cooper Inc. <span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03x').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square"  onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="color:green;float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-comments  chat-closed2"> </span></td>
+</tr>
+<tr>
+        <td >Thomas Ltd. <span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03x').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square" onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="color:grey;float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-comments"> </span></td>
+</tr>
+<tr>
+        <td>California Distributors <span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03x').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square" onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="color:green;float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-comments  chat-closed2"> </span></td>
+</tr>    </table>
+
+<div id="id01" class="w3-modal" style="margin:0px !important">
+    <div class="w3-modal-content" >
+      <div class="w3-container" style="margin:0px !important">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form  class="w3-container w3-card-5 margin:10px !important" >
+<h2 class="w3-center">Send email</h2>
+ 
+<div class="w3-row w3-section">
+ 
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+<input type="text" placeholder="Subject" style="width:94%"></input>
+    <div class="w3-rest">
+      
+    </div>
+</div>
+
+
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px;"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" style="height:100px" name="message" type="text" placeholder="Message">
+    </div>
+</div>
+
+<button class="w3-button w3-block w3-section w3-ripple w3-padding" style="background-color:mediumpurple;color:white !important">Send</button>
+</div></div></div>
+
+
+
+<div id="id02" class="w3-modal" style="margin:0px !important">
+    <div style="width:20% !important" class="w3-modal-content" >
+      <div class="w3-container" style="margin:0px !important">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form  class="w3-container w3-card-5 margin:10px !important" >
+
+<div class="w3-row w3-section"><h4 style="padding:10px">Contact</h4><hr>
+ 	 <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+
+<p id="cname">Name</p>
+    <div class="w3-rest">
+      
+    </div>
+</div>
+
+
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px;"><i class="w3-xxlarge fa fa-phone"></i></div>
+    <div class="w3-rest">
+    <p id="cnum">+1 209 556789</p>
+    </div>
+</div>
+</div></div></div>
+
+
+<div id="id03" class="w3-modal" style="margin:0px !important">
+    <div class="w3-modal-content" >
+      <div class="w3-container" style="margin:0px !important">
+        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form  class="w3-container w3-card-5 margin:10px !important" >
+<h2 class="w3-center">Schedule A Sales Rep Visit</h2>
+ 
+<div class="w3-row w3-section">
+ 
+</div>
+
+<div class="w3-row w3-section">
+  
+
+<form>
+    <div class="row">
+      <div class="col-25"><i class="w3-large fa fa-fa"></i>
+        <label for="fname"> Region</label>
+      </div>
+      <div class="col-75">
+        California
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25"><i class="w3-large fa fa-shopping-cart"></i>
+        <label id="lname"> Distributor</label>
+      </div>
+      <div class="col-75" id="lame">name
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25"><i class="w3-large fa fa-calendar-o"></i>
+        <label for="country">Start Date</label>
+      </div>
+      <div class="col-75">
+       <input type ="date"></input>
+      </div>
+        <div class="row">
+      <div class="col-25"><i class="w3-large fa fa-calendar-o"></i>
+        <label for="country">End Date</label>
+      </div>
+      <div class="col-75">
+       <input type ="date"></input>
+      </div>
+   
+    <div class="row">
+      <div class="col-25" style="margin-top:5%"><i class="w3-large fa fa-pencil"></i>
+        <label for="subject">Reason</label>
+      </div>
+      <div class="col-75">
+      <input class="w3-input w3-border" style="height:100px" name="message" type="text" placeholder="Reason">
+      </div>
+    </div>
+    
+  </form>
+</div>
+</div>
+</div>
+
+
+
+
+
+<button type="submit" class="w3-button w3-block w3-section w3-ripple w3-padding" style="background-color:mediumpurple;color:white !important" onclick="document.getElementById('id03').style.display='none'">Schedule</button>
+</div></div></div>
+
+
+
+
+<a style="float:right;margin-right:10px;color:blue">more...</a>
+</div> 
+
+ <div class="w3-half image" >
+   <table id="retailers" style="height:170px;margin-top:8px;width:99.5%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+  <tr>
+    <td  style="background-color:#e6d8f3;"><i><b>Retailers</b></i></td>
+  </tr>
+
+
+<tr>
+        <td>Walmart <span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square" onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;color:grey;" class="fa fa-comments"> </span></td>
+</tr>
+<tr>
+        <td >Costco <span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square" onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="color:green;float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-comments  chat-closed2"> </span></td>
+</tr>
+<tr>
+        <td>Best Buy<span style="float:right;font-size:16px;margin:2px;padding:2px;" class="fa fa-calendar" onclick="document.getElementById('id03').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-phone-square" onclick="document.getElementById('id02').style.display='block'"> </span><span style="float:right;font-size:18px;padding:2px;margin:2px;" class="fa fa-envelope" onclick="document.getElementById('id01').style.display='block'"> </span><span style="color:green;float:right;font-size:18px;padding:2px;margin:2px;" class=" chat-closed2 fa fa-comments"> </span></td>
+</tr>    </table>
+<a style="float:right;margin-right:10px;color:blue">more...</a>
+</div> 
+
+
+</div>
+
+  <div class="w3-half image"  style="width:40%">
+<div class="w3-half image" >
+
+<div class="w3-full" style="margin:8px;margin-left:3px !important;margin-top:6px !important;box-shadow:1px 1px lightgrey">
+<div class="image" >
+
+
+<div class="w3-container" style="margin-top:13px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Sales Trends</i></h6></div>
+  <img style="height:170px;box-shadow:1px 1px lightgrey;margin-left:3px !important;margin-top:0px !important;" src="salestrend.jpg" alt="image" width="98.5%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+</div>
+<div class="w3-container" style="margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6><i>Promotions Comparision</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:158px;" src="campaign2.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+</div>  
+<div class="w3-container" style="width:197% !important;margin-left:6px;margin-top:6px !important;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6 style="padding:0px !important;"><i>Performance KPIs for California</i></h6></div>
+  <img style="height:150px;box-shadow:1px 1px lightgrey;margin-left:3px !important;margin-top:0px !important;" src="kpi.jpg" alt="image" width="198%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+
+
+</div>
+
+
+
+
+
+  <div style="margin-left:0px;" class="w3-half" >
+    <div class="w3-full image" >
+<div class="w3-container" style="margin:0px;margin-left:0px !important;width:100%;margin-top:14px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+<h6 style="padding:0px !important;"><i>Upload Brand Materials</i></h6></div>
+ <div class="w3-container" style="box-shadow:1px 1px lightgrey;">
+<span><br>Browse
+  <input class="w3-select" type="file" name="pic" accept="/*"></span> 
+<div class="w3-row-padding" style="margin:0 -16px">	
+
+<div class="w3-full">
+<h6 >Selection</h6>	
+
+<select class="w3-select"  color:black">
+  <option value="volvo">Brand</option>
+  <option value="saab">M&M's</option>
+</select>
+<select class="w3-select" color:black">
+  <option value="volvo">Distributors</option>
+  <option value="saab">Cooper Inc</option>
+  <option value="opel">Thomas Ltd.</option>
+  <option value="audi">California Distribution</option>
+  <option value="audi"></option>
+</select>
+<select class="w3-select" color:black">
+  <option value="audi">Retailers</option>
+  <option value="volvo">Walmart</option>
+  <option value="saab">Costco</option>
+  <option value="opel">Best Buy</option>
+  <option value="audi"></option>
+
+</select>
+
+<select class="w3-select" color:black">
+  <option value="audi">Promotion</option>
+  <option value="volvo">Summer Promo</option>
+  <option value="saab">Womens Day</option>
+  <option value="opel">V day Promo</option>
+  <option value="audi">Gifting Day</option>
+
+</select>
+<select class="w3-select"  color:black">
+  <option value="volvo">Product</option>
+  <option value="saab">Peanut</option>
+  <option value="opel">Mega</option>
+  <option value="audi">Milk</option>
+</select>
+<a href="#" class="dropbtn w3-block w3-button w3-center" style="margin:10px;margin-bottom:7px;color:white;background-color:#c94f8a !important;width:90%;" onclick="update_alert()">UPLOAD</a></div></div></div><div class="w3-container" style="margin-top:6px;background-color:#e6d8f3;box-shadow:1px 1px lightgrey">
+</div>
+    </div>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 ">
+  </footer>
+
+  <!-- End page content -->
+</div>
+<div class="chat-box">
+
+<div class="chat-header hide"><div class="w3-twothird"></div><p id="chatname2"> Connect & Collaborate</p>
+<p style="position:absolute;top:0px;left:162px;"><button  style="border: none;background-color:#8e4fc9;height:35px;width:33.5px;color:white;">-</button><button style="color:white;border: none;background-color:red;width:33.5px;height:35px" onclick="resetChat()">X</button></p></div>
+<div  class="chat-content hide">
+<div style="bottom:10px;margin:0px;position:fixed;width:240px;">
+            <ul id="chatdiv" style="height:247px;overflow:auto;"></ul>
+            <div>
+                <div class="msj-rta macro" style="margin:auto;width:100%;">                        
+                    <div class="text text-r" style="width:100%;">
+                        <input style="width:100%;" class="mytext" placeholder="Type a message"/>
+                    </div> 
+                </div>
+
+</div>
+</div>
+</div>
+</div>
+  <div style="display:none" class="w3-container w3-third">	
+<h5 style="text-align:center;"><strong>Performance KPIs for California</strong></h5>
+<canvas id="oilChart" ></canvas><h6 style="text-align:center;"><strong>Promotion execution</strong> 87%</h6></div>
+  <div style="display:none" class="w3-container w3-third">
+
+<canvas id="oilChart2"></canvas><h6 style="text-align:center;"><strong>Coverage</strong> 91%</h6></div>
+  <div style="display:none" class="w3-container w3-third">
+
+<canvas id="oilChart3"></canvas>
+<h6 style="text-align:center;"><strong>Contribution</strong> 77%</h6>
+<br>
+</div>
+</div>
+  <!-- End page content -->
+<div class="chat-box">
+<div class="chat-closed"> Chat Now </div>
+<div class="chat-header hide"><div class="w3-twothird"></div><p style="margin-top:0px;" id="chatname"> Connect & Collaborate</p>
+<p style="position:absolute;top:-13px;left:162px;"><button  style="border: none;background-color:#8e4fc9;height:35px;width:33.5px;color:white;">-</button><button style="color:white;border: none;background-color:red;width:33.5px;height:35px" onclick="resetChat()">X</button></p></div>
+<div  class="chat-content hide">
+<div style="bottom:10px;margin:0px;position:fixed;width:240px;">
+            <ul id="chatdiv" style="height:247px;overflow:auto;"></ul>
+            <div>
+                <div class="msj-rta macro" style="margin:auto;width:100%;">                        
+                    <div class="text text-r" style="width:100%;">
+                        <input style="width:100%;" class="mytext" placeholder="Type a message"/>
+                    </div> 
+                </div>
+
+</div>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+//logout alert
+
+
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+
+var oilCanvas = document.getElementById("oilChart");
+var oilCanvas2 = document.getElementById("oilChart2");
+var oilCanvas3 = document.getElementById("oilChart3");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var oilData = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [13, 87],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData2 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [9, 91],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData3 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [23, 77],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var chartOptions = {
+  rotation: Math.PI,
+  cutoutPercentage: 50,
+  circumference: 2*Math.PI,
+  legend: {
+    position: 'left'
+  },
+  animation: {
+    animateRotate: false,
+    animateScale: true
+  },
+ tooltips: {
+         enabled: false
+    }
+};
+
+var pieChart = new Chart(oilCanvas, {
+  type: 'doughnut',
+  data: oilData,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas2, {
+  type: 'doughnut',
+  data: oilData2,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas3, {
+  type: 'doughnut',
+  data: oilData3,
+  options: chartOptions
+});
+
+//chat
+$(document).ready(function(){
+    $(".chat-closed").on("click",function(e){
+        $(".chat-header,.chat-content").removeClass("hide");
+        $(this).addClass("hide");
+    });
+
+    $(".chat-header").on("click",function(e){
+        $(".chat-header,.chat-content").addClass("hide");
+        $(".chat-closed").removeClass("hide");
+    });
+
+ $(".chat-closed2").on("click",function(e){
+        $(".chat-header,.chat-content").removeClass("hide");
+ $(".chat-closed").addClass("hide");
+    });
+
+});
+ var me = {};
+me.avatar = "sofia.png";
+
+var you = {};
+you.avatar = "james.png";
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}            
+
+//-- No use time. It is a javaScript effect.
+function insertChat(who, text, time){
+    if (time === undefined){
+        time = 0;
+    }
+    var control = "";
+    var date = formatAMPM(new Date());
+    
+    if (who == "me"){
+        
+        control = '<li style="width:100%">' +
+                        '<div class="msj macro">' +
+                        '<div class="avatar"><img class="img-circle" style="width:100%;" src="'+ me.avatar +'" /></div>' +
+                            '<div class="text text-l">' +
+                                '<p>'+ text +'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</li>';                    
+    }else{
+        control = '<li style="width:100%;">' +
+                        '<div class="msj-rta macro">' +
+                            '<div class="text text-r">' +
+                                '<p>'+text+'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="'+you.avatar+'" /></div>' +                                
+                  '</li>';
+    }
+    setTimeout(
+        function(){                        
+            $("ul").append(control);
+
+        }, time);
+    
+}
+
+function resetChat(){
+    $("ul").empty();
+}
+
+$(".mytext").on("keyup", function(e){
+    if (e.which == 13){
+        var text = $(this).val();
+        if (text !== ""){
+            insertChat("me", text);              
+            $(this).val('');
+        }
+                if (text.toUpperCase() == "Hi, I am Sofia, Brand manager for your region".toUpperCase()){
+            insertChat("you", "Hello Sofia!",2000);              
+            $(this).val('');
+        }  
+         else if (text.toUpperCase() == "I just wanted to check how Summer Promo campaign is going on".toUpperCase()){
+            insertChat("you", "Sofia, Unfortunately it is not picking up pace.",2000);              
+            $(this).val('');
+        }
+         else if (text.toUpperCase() == "what is the reason?".toUpperCase()){
+            insertChat("you", "This is mainly due to push back we are facing from competitor's campaign.",2000);              
+            $(this).val('');
+        }
+         else if (text.toUpperCase() == "OK. Can you upload related files?".toUpperCase()){
+            insertChat("you", "I will upload them in tracker which you can go through.",2000);              
+            $(this).val('');
+        }
+         else if (text.toUpperCase() == "Thank you. Will analyse and revert.".toUpperCase()){
+            insertChat("you", "Thank you.",2000);              
+            $(this).val('');
+        }
+        
+        }
+});
+
+//-- Clear Chat
+resetChat();
+
+function addRowHandlers() {
+    var table = document.getElementById("distributors");
+    var rows = table.getElementsByTagName("tr");
+    for (i = 0; i < rows.length; i++) {
+        var currentRow = table.rows[i];
+        var createClickHandler = 
+            function(row) 
+            {
+                return function() { 
+                                        var cell = row.getElementsByTagName("td")[0];
+                                        var str = cell.innerHTML;
+var id = str.substring(0, 30);
+                 document.getElementById("chatname").innerHTML=id;
+var idist='Distributor';
+document.getElementById("cname").innerHTML=id;
+document.getElementById("lame").innerHTML=id;
+document.getElementById("lname").innerHTML=idist;
+                                 };
+            };
+
+        currentRow.onclick = createClickHandler(currentRow);
+    }
+}
+function addRowHandlersRetail() {
+    var table = document.getElementById("retailers");
+    var rows = table.getElementsByTagName("tr");
+var idist='Retailer';
+    for (i = 0; i < rows.length; i++) {
+        var currentRow = table.rows[i];
+        var createClickHandler = 
+            function(row) 
+            {
+                return function() { 
+                                        var cell = row.getElementsByTagName("td")[0];
+                                             var str = cell.innerHTML;
+var id = str.substring(0, 30);
+                 document.getElementById("chatname").innerHTML=id;
+document.getElementById("cname").innerHTML=id;
+document.getElementById("lame").innerHTML=id;
+document.getElementById("lname").innerHTML=idist;
+                                 };
+            };
+
+        currentRow.onclick = createClickHandler(currentRow);
+    }
+}
+window.onload = addRowHandlers();
+window.onload = addRowHandlersRetail();
+
+window.setInterval(function() {
+  var elem = document.getElementById('chatdiv');
+  elem.scrollTop = elem.scrollHeight;
+}, 1000);
+
+function myFunctionNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}
+
+//update alert
+function update_alert(){
+
+swal({
+  title: "Details Uploaded",
+  text: "Details uploaded successfully!",
+  type: 'success',
+}).then(function() {
+    window.location = "#";
+})
+}</script>
+
+</body>
+</html>

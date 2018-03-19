@@ -1,0 +1,5 @@
+package com.dsot.ccp.repository;
+
+public class UserRepository {
+
+}

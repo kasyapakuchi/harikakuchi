@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><style>
+<style>
+html{background-color:white;}
+html,body,h1,h2,h3,h4,h5 {font-family: 'Lato', sans-serif;!important; }
+h6 { 
+    display: block;
+    font-size: .83em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+//cal
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+p{}
+a{display: block;    font-size: 13px;
+    line-height: 1.4;text-decoration: none !important;}
+body {font-family: 'Lato', sans-serif;!important;font-size:14px;}
+
+.month {
+    padding: 3px 25px;
+    width: 100%;
+    background: #F4ECF7;
+
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+ 
+    font-size: 15px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 0px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 0px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: white;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 11.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #F4ECF7;
+    color: black !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #d48d5a;
+  color: black;
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+</style>
+<body>
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-large" style="background-color:#8e4fc9;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <a href="jasmine.html"><span class="w3-bar-item w3-left"><img src="logo.png" style="height:44px"></img></span></a>
+<div style="font-size:28px !important"class="topnav dropdown" id="myTopnav">
+<li style="list-style-type: none;" class="dropdown">  
+  <a href="jasmine.html" style="background-color:">Dashboard</a>
+  <a href="jasmineconnect.html">Assets</a>
+  <a href="#">POSM</a></div>
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a href="cv.html"><div class="tooltip w3-round-xxlarge" style="margin-top:7px;padding: 1px 18px 1px 0px;height:46px;background-color:#bb72fc;float:right;color:white;font-size:18px"><img class="image w3-circle" src="avatar_hat.jpg" style="height:46px;"></img> Sofia Andres</div></a>
+
+</div>
+<!-- Sidebar/menu -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:00px;margin-top:40px;">
+
+  <!-- Header -->
+  </div>
+
+<!--MAIN-->
+<div class="w3-full">
+<div class="w3-quarter" style="width:18%;margin-left:10px !important;margin-top:30px !important;margin:2px;">
+   <div class="image" >
+<div class="w3-container" style="background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Distributors</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:160px;background-color:white" src="topd.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+        </div>
+
+
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Campaign Performance</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;height:150px;" src="campaign.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  </div>    
+   <div class="image" >
+<div class="w3-container" style="margin-top:6px !important;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Top 5 Products</i></h6></div>
+  <img  style="box-shadow:1px 1px lightgrey;height:154px;" src="topp.jpg" alt="image" width="100%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  <a href="ca.html" style="top: 10%; left: 0%; width: 15%; height: 95%;"></a>
+  <a href="co.html" style="top: 10%; left: 16%; width: 35%; height: 95%;"></a>
+  <a href="ar.html" style="top: 10%; left: 40%; width: 15%; height: 95%;"></a>
+</div>    
+</div>
+</div>
+
+<div class="w3-container w3-threequarter" style="width:81%;margin-left:-10px !important;margin-right:0px !important;margin-top:17px !important;">
+   <div class="w3-half image" style="width:60%">
+  <br><img style="height:340px" src="region.png" alt="image" width="99%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+  <a href="ca.html" style="top: 10%; left: 0%; width: 15%; height: 95%;"></a>
+  <a href="co.html" style="top: 10%; left: 16%; width: 35%; height: 95%;"></a>
+  <a href="ar.html" style="top: 10%; left: 40%; width: 15%; height: 95%;"></a>
+<br>
+
+ <div class="w3-half image" >
+<div class="w3-container" style="width:97.5%;margin-top:6px !important;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Top Q3 Sales by Product</i></h6></div>
+   <table style="width:98%;box-shadow: 0px 2px grey;" class="w3-table  w3-bordered w3-border w3-hoverable w3-white">
+<tr>
+        <th style="color:;">Product</th>
+ <th style="color:;">Quantity</th>
+ <th style="color:;">Revenue</th>
+      </tr>
+
+<tr>
+        <td style="color:;">Mega</td>
+	<td style="color:;">2.176K</td>
+<td style="color:;">235.98K</td>      
+</tr>
+      <tr>
+  <td style="color:;">Crispy</td>
+	<td style="color:;">1.976K</td>
+<td style="color:;">205.18K</td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Peanut</td>
+	<td style="color:;">1.103K</td>
+<td style="color:;">135.98K</td>      
+
+      </tr>
+    </table>
+  </div> 
+
+ <div class="w3-half image" >
+<div class="w3-container" style="width:98%;margin-top:6px !important;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Top Q3 Distributors</i></h6></div>
+   <table style="width:98%;box-shadow: 0px 2px grey;" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+<tr>
+        <th style="color:;">Opportunity Owner</th>
+ <th style="color:;">Amount</th>
+      </tr>
+
+<tr>
+        <td style="color:;">frankford</td>
+<td style="color:;">235.98K</td>      
+</tr>
+      <tr>
+  <td style="color:;">Toffy Town</td>
+<td style="color:;">205.18K</td>      
+
+      </tr>
+      <tr>
+  <td style="color:;">Sweet Candy</td>
+<td style="color:;">135.98K</td>      
+
+      </tr>
+    </table>
+
+</div> 
+</div>
+
+  <div class="w3-half image"  style="width:40%">
+<div class="w3-half image" >
+<div class="w3-container" style="margin:10px;margin-left:3px !important;margin-top:13px !important;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6><i>Sales Trends</i></h6></div>
+  <img style="box-shadow:1px 1px lightgrey;margin-left:3px !important;margin-top:-10px !important;" src="salestrend.jpg" alt="image" width="93.5%" height:"50%" usemap="#mapmap" hidefocus="true"/>
+
+
+<div class="w3-full" style="margin:10px;margin-left:3px !important;margin-top:6px !important;box-shadow:1px 1px lightgrey">
+<div class="w3-container" style="background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6 ><i>Connect</i></h6></div>
+<div class="w3-container" style="margin-top:10px;font-size:14px;background-color:white;box-shadow:1px 1px lightgrey">
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Benedict Paul<span style="font-size:18px;color:green" class="w3-right fa fa-comment" onclick="document.getElementById('id01').style.display='block'"></span></p>
+
+<div id="id01" class="w3-modal" style="margin:0px !important">
+    <div class="w3-modal-content" >
+      <div class="w3-container" style="margin:0px !important">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form  class="w3-container w3-card-5 margin:10px !important" >
+<h2 class="w3-center">Send Message</h2>
+ 
+<div class="w3-row w3-section">
+ 
+</div>
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+<p>+1 508 456456</p>
+    <div class="w3-rest">
+      
+    </div>
+</div>
+
+
+
+<div class="w3-row w3-section">
+  <div class="w3-col" style="width:50px;"><i class="w3-xxlarge fa fa-pencil"></i></div>
+    <div class="w3-rest">
+      <input class="w3-input w3-border" style="height:100px" name="message" type="text" placeholder="Message">
+    </div>
+</div>
+
+<button class="w3-button w3-block w3-section w3-ripple w3-padding" style="background-color:mediumpurple;color:white !important">Send</button>
+</div></div></div>
+
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Jame Watt<span style="font-size:18px;color:green" class="w3-right fa fa-comment"></span></p>
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Thomas Edward<span style="font-size:18px;color:green" class="w3-right fa fa-comment"></span></p>
+<img  class="image w3-circle" src="navicon.png" style="height:26px;"></img> Robert John<span style="font-size:18px;color:green" class="w3-right fa fa-comment"></span></p>
+</div>
+<div class="w3-container" style="margin-top:6px;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6 ><i>Activity</i></h6></div>
+<div class="w3-container" style="font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="#"><div  class="w3-quarter fa fa-bookmark" style="color:purple;font-size:30px"></div><div>New flavour launched in Orbit.</div></a>
+<a style="margin:10px 1px;font-size:14px;" href="#"><div  class="w3-quarter fa fa-bookmark" style="color:orange	;font-size:30px"></div><div>Check CO brand guidelines.</div></a><a style="margin:10px 1px;font-size:14px;" href="#"><div  class="w3-quarter fa fa-bookmark" style="color:orange;font-size:30px"></div><div>Check CA sales report.</div></a>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+  <div style="margin-left:0px" class="w3-half" >
+  
+<div class="month" style=";margin-top:13px;box-shadow:1px 1px lightgrey">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      <span style="font-size:14px"><b>March 2018</b></span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays" style="box-shadow:1px 1px lightgrey">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days" style="box-shadow:1px 1px lightgrey">  
+  <li></li>
+  <li></li>
+  <li></li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul><br>
+
+
+  <div class="w3-full image" >
+<div class="w3-container" style="margin-top:-14px;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6 ><i>Notifications</i></h6></div>
+<div class="w3-container" style="font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="ManagerPromoOpen.html">Retailer has updated Summer Promo Details.</a>
+<a style="margin:10px 1px;font-size:14px;" >Someone has placed the order.</a>
+<a style="margin:10px 1px;font-size:14px;" href="ManagerPromoOpen.html">Someone else has updated Summer Promo Details.</a>
+
+</div>
+ <div class="w3-container" style="margin-top:6px;background-color:#F4ECF7;box-shadow:1px 1px lightgrey">
+<h6 ><i>Shortcuts</i></h6></div>
+<div class="w3-container" style="font-size:10px;background-color:white;box-shadow:1px 1px lightgrey">
+<a style="margin:10px 1px;font-size:14px;" href="#">Retailer List</a>
+<a style="margin:10px 1px;font-size:14px;" >Distributors List</a>
+<a style="margin:10px 1px;font-size:14px;" href="#">Product List.</a>
+<a style="margin:10px 1px;font-size:14px;" href="#">Promotions List.</a>
+
+</div>
+</div></div></div>
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 ">
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+
+
+
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Dark", "Premelted", "SemiSweet", "White", "Milk", "BitterSweet"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12,14, 12, 13, 16, 10,9],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+legend: {
+    display: false,
+},
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+
+
+//
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["Q1","Q2","Q3","Q4"],
+    datasets: [{
+        data: [60,70,138,170],
+        label: "Sales Growth (%)",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+    },
+legend: {
+    display: false,
+}
+  }
+});
+
+//
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Organic", "Vegan", "Flavoured","Premium"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","pink"],
+        data: [24,22,34,20]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+
+    ,
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Melys", "Dulce", "Marvel"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [41,39,20],
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      },
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}
+
+</script>
+
+</body>
+</html>

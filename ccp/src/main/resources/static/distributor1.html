@@ -1,0 +1,1219 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<title>Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="fa.min.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+ 
+<style>
+html{ overflow-y: scroll;overflow-x: auto;}
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+a, u {
+    text-decoration: none !important;
+}
+#calm {
+    width:105%;
+    outline: 2px solid #75a3a3;
+    outline-offset: -18px;
+}
+        .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  margin: 50px;  
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    height:35px;
+}
+td{
+	font-weight:bold;
+	color:white;
+}
+th { 
+       border: 1px solid white;
+}
+
+tr:nth-child(odd){background-color: white}
+
+th {
+    background-color:teal;
+    color: white;
+}
+.eventbtn {
+
+	background-color: #ffa64d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+.dashboard{
+ 	background-color: purple;
+	margin:40px 0px;
+	height:210px;
+	width:300px;
+	color:white;
+	padding:20px;
+   
+}
+
+.dashboard2{
+ 	background-color: teal;
+	margin:40px 0px;
+	height:220px;
+	width:300px;
+	color:white;
+	padding:20px;
+   
+}
+//
+th, td { min-width: 200px; }
+
+#lognav4{display:none;}
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 100%;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+
+select#soflow-color {
+   color: #fff;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.image{
+  position: relative;
+}
+.image a{
+  display: block;      
+  position: absolute;
+}
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #d48d5a;
+  color: black;
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+ #myDIV{
+margin-right: -38px;
+}
+
+#myUL{
+margin-right: -51px;
+}
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+#logo{
+display:none;
+}
+#lognav, #lognav1{float:left;width:33%;}
+}
+
+@media screen and (max-width: 600px) {
+    #calm{width:105%;outline: 0px solid teal;
+        outline-offset: -1px;}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+#lognav{float:left;}
+#lognav1{float:left;display:none;}
+#lognav4{float:left;width:33%;display:block;}
+#lognav3{display:none;}
+    .col-25, .col-75, input[type=reset] {
+        width: 100%;
+        margin-top: 0;
+    }
+ .topnav input[type=text] {
+        float: none;
+        display: none;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+	
+    }
+}
+
+.topnav input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+width:40%;
+ -moz-border-radius:20px; /* Firefox */
+    -webkit-border-radius: 20px; /* Safari, Chrome */
+    -khtml-border-radius: 20px; /* KHTML */
+    border-radius: 20px; /* CSS3 */
+    behavior:url("border-radius.htc");
+}
+
+.green   { background-color: #b87c51; }
+.green select   { background-color:#b87c51;color:white; }
+
+
+//update form
+* {
+    box-sizing: border-box;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+}
+
+input[type=reset] {
+    background-color: #b87c51;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #b87c51;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+//flash
+.flash-button{
+	
+	
+	animation-name: flash;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	//Firefox 1+
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+
+	//Safari 3-4
+	-moz-animation-name: flash;
+	-moz-animation-duration: 1s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+//Firefox 1+
+@-webkit-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+//Safari 3-4
+@-moz-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
+
+//notifications
+/* Notifications */
+
+.notification {
+    display: inline-block;
+    position: relative;
+    padding: 0.6em;
+    background: #3498db;
+    border-radius: 0.2em;
+    font-size: 1.3em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification::before, 
+.notification::after {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.notification::before {
+    display: block;
+    content: "\f0f3";
+    font-family: "FontAwesome";
+    transform-origin: top center;
+}
+
+.notification::after {
+    font-family: Arial;
+    font-size: 0.7em;
+    font-weight: 700;
+    position: absolute;
+    top: 10px;
+    padding: 2px 5px;
+    line-height: 100%;
+    opacity: 0;
+    content: attr(data-count);
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    transition: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.notification.notify::before {
+    -webkit-animation: ring 1.5s ease;
+    animation: ring 1.5s ease;
+}
+
+.notification.show-count::after {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+@-webkit-keyframes ring {
+    0% {
+        -webkit-transform: rotate(35deg);
+    }
+    12.5% {
+        -webkit-transform: rotate(-30deg);
+    }
+    25% {
+        -webkit-transform: rotate(25deg);
+    }
+    37.5% {
+        -webkit-transform: rotate(-20deg);
+    }
+    50% {
+        -webkit-transform: rotate(15deg);
+    }
+    62.5% {
+        -webkit-transform: rotate(-10deg);
+    }
+    75% {
+        -webkit-transform: rotate(5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+@keyframes ring {
+    0% {
+        -webkit-transform: rotate(35deg);
+        transform: rotate(35deg);
+    }
+    12.5% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    25% {
+        -webkit-transform: rotate(25deg);
+        transform: rotate(25deg);
+    }
+    37.5% {
+        -webkit-transform: rotate(-20deg);
+        transform: rotate(-20deg);
+    }
+    50% {
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg);
+    }
+    62.5% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    75% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.newborder{
+    border: 1px solid rgb(192, 188, 188)!important; 
+}
+
+//to do 
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 14px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    
+    margin-left: 40px;
+    width: 75%;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+
+}
+
+/* Style the close button */
+myDIV .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+myDIV .close:hover {
+
+  color: white;
+}
+
+/* Style the header */
+.header {
+ 
+  padding: 0px 40px;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+#myInput {
+  border: none;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background:  #e7ecf1;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+#myDIV{
+margin-right: -38px;
+}
+
+#myUL{
+margin-right: -51px;
+}
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+//new nav
+<div class="w3-bar w3-top w3--blue w3-large" style="z-index:4;background-color:#b87c51">
+
+<div class="topnav dropdown" id="myTopnav">
+<li style="list-style-type: none;" class="dropdown">  
+  <a href="#"><img src="jasmine.png" class="w3-margin-right" style="height:28px"></a>
+  <a href="distributor.html" style="background-color:#994d00;">Dashboard</a>
+  <a href="#">Products</a>
+  <a href="distributorassests.html">Assets</a>
+  <a href="#">POSM</a>
+
+      <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;top:2px;" name="search">
+    
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+
+<a id ="lognav1" href="notifications.html" class="notification" data-toggle="dropdown" style="padding: 21px 18px;float:right;"></a>  
+   <ul style="background-color:lightgrey;position:fixed;float:right;z-index:100;left:80%;width:190px;top:60px;" class="dropdown-menu" role="menu">
+   <li style="text-align:left !important;display:block;" class="content"><a href="#"><h5><b>Notifications</b></h5></a></li><br>
+      <li style="text-align:left;display:block;" class="content"><a href="ManagerPromoOpen.html"><span>The Home Depot </span><br><span> has updated <br>Summer Promo details</span></a></li><br><br>
+   </ul>
+
+    <a id ="lognav3" class="fa" style="height:100%;padding: 21px 18px;float:right;color:white">Hello, James</a>
+   </li>
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunctionNav()">&#9776;</a>
+
+  <span class="w3-bar-item w3-right" id="logo" ></span>
+</div></div>
+//new nav
+<!-- Sidebar/menu -->
+
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:10px;margin-top:50px;">
+        <div class="w3-row">
+                <div class="w3-container w3-half">
+                        <div class="w3-content w3-display-container">
+                                <img class="mySlides" src="head1.jpg" style="width:100%">
+                                <img class="mySlides" src="head2.jpg" style="width:100%">
+                                <img class="mySlides" src="head3.jpg" style="width:100%">        
+                                <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+                        </div>
+                       <br>
+                               <div class="w3-row newborder" style="background-color:#75a3a3;padding:2px;">
+                                    <h4 style="text-align:center; color:#ccffcc;"><b>Quaterly Promotions</b></h4>
+                               </div>
+                                <div id="calm" style="overflow-x:auto;margin-left: -16px;margin-top: -17px;"	class="w3-container w3-twothird" >
+                                        <hr>
+                                
+                                        <table class="w3-container" style="width: 99.50%;margin-left: 2px;margin-top: -23px;">
+                                      
+                                          <tr style="overflow-x:auto;">
+                                            <th style="border:1px solid black">JAN 22</th>
+                                            <th style="border:1px solid black">JAN 29</th>
+                                            <th style="border:1px solid black">JAN 25</th>
+                                          <th style="border:1px solid black">FEB 05</th>
+                                            <th style="border:1px solid black">FEB 12</th>
+                                            <th style="border:1px solid black">FEB 19</th>
+                                        <th style="border:1px solid black">FEB 26</th>
+                                            <th style="border:1px solid black">MAR 05</th>
+                                            <th style="border:1px solid black">MAR 12</th>
+                                        </tr>
+                                          <tr>
+                                            <td  colspan = "2" class = "eventbtn" onclick="window.location.href='#'">NEW YEAR PROMOTION</td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td></td>
+                                        <td></td>
+                                        <td></td>
+                                
+                                          
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td colspan = "2" class = "eventbtn" onclick="window.location.href='retailerpromo.html'">SUMMER PROMO</td>
+                                        <td></td>  		
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td colspan = "3" class = "eventbtn" >BIG FESTIVAL</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td></td>
+                                        
+                                        </tr>
+                                
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td></td>
+                                        <td colspan = "2" class = "eventbtn" onclick="window.location.href='#'">ANNIVERSARY PROMO</td>
+                                          
+                                        </tr>
+                                
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          
+                                        </tr>
+                                
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td colspan = "2" class = "eventbtn" onclick="window.location.href='#'">V DAY SPECIAL</td>
+                                        <td></td>
+                                          <td></td>
+                                        <td></td>
+                                          
+                                        </tr>
+                                
+                                
+                                        
+                                
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          <td></td>
+                                        <td></td>
+                                        <td></td>
+                                          
+                                        </tr>
+                                
+                                        
+                                
+                                
+                                        </table>
+                                
+                                
+                                    
+                                </div>
+
+                      
+                </div>
+                <div class="w3-container w3-half">
+                  <div class="w3-half">
+                      <div style="text-align: center;">
+                      
+                       <div class="w3-row" style="width:108%;">
+                            <div class="w3-half" style="background-color:#b3fff0;">
+                                    <div class="w3-row newborder" style="padding: 0px;">
+                                        <h6><strong>TotalSales YTD</strong></h6>
+                                        <span>
+                                            <h4 style="display: inline;">$125,000</h4>
+                                        </span>
+                                    </div>
+                            </div>  
+                            <div class="w3-half" style="background-color:#b3ffb3;">
+                                    <div class="w3-row newborder" style="padding: 0px;">
+                                        <h6><strong>Inventory value</strong></h6>
+                                        <span>
+                                            <h4 style="display: inline;">$703,000</h4>
+                                        </span>
+                                    </div>
+                            </div>
+                       </div>  
+                      </div>
+                      <div class="w3-row" style="width:108%;">
+                          <div class="w3-half"><br>
+                            <div class="w3-row newborder" style="padding: 10px;">
+                                    <h6 style="display: inline;"><strong>CURRENT MONTH MTD</strong> </h6>
+                                        <a href="#">
+                                          <i class="fa fa-refresh"></i>
+                                        </a>
+                                       
+                            </div>
+                            <div class="w3-row newborder" style="padding: 10px;">
+                                    <h4><strong>$234,776</strong></h4>
+                                    <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+                                    </div>
+                                    <br>
+                                    <span class="glyphicon glyphicon-circle-arrow-up"><strong>11%</strong></span>
+                                    <p>More sales than last month</p>
+                                    
+                            </div>
+                          </div>
+                          <div class="w3-half" style="padding-left:5px;"><br>
+                            <div class="w3-row newborder" style="padding:10px;">
+                                    <h6 style="display: inline;"><strong>CURRENT WEEK WTD</strong></h6>
+                                        <a href="#">
+                                                <i class="fa fa-refresh"></i>
+                                        </a>
+                            </div>
+                            <div class="w3-row newborder" style="padding: 10px;">
+                                    <h4><strong>$17,452</strong></h4>
+                                    <div class="w3-grey w3-round-xlarge w3-small">
+                                            <div class="w3-container w3-center w3-round-xlarge w3-green" style="width:65%">65%</div>
+                                    </div>
+                                    <br>
+                                    <span class="glyphicon glyphicon-circle-arrow-down"><strong>3%</strong></span>
+                                    <p>Less sales than last week</p>
+                                    
+                            </div>
+
+                          </div>
+                      </div> 
+                      <div class="w3-row w3-center" style="margin-top: 5px; padding:5px;background-color: #75a3a3;  width: 108%;">
+                            <h4 style="color:#ccffcc;"><strong>Annual Sales Growth</strong></h4>
+                     </div>
+                     <div class="w3-row">
+                            <img src="salesgraph.jpg" width="108%"" height="250px"></img>
+                     </div>
+                                         
+                  </div>
+                  <div class="w3-half">
+                        <div id="myDIV" class="header">
+                                <div style="text-align: center;background-color: #75a3a3;padding: 5px;">
+                                        <h4 style="color:#ccffcc;"><strong>To Do List</strong></h4>
+                                        </div>
+                                <input type="text" id="myInput" placeholder="Title...">
+                                <span onclick="newElement()" class="addBtn">Add</span>
+                              </div>
+                              <ul id="myUL">
+                                    <li>Customs Reports</li>
+                                    <li class="checked">Pay bills</li>
+                                    <li>Track Ecommerce</li>
+                                    <li>Publish Promotions</li>          
+                                  </ul>
+                        <br>
+                   
+                            <div class="w3-row newborder" style="margin-left: 12%;    margin-top: 3%;">
+                                <div style="text-align: center;background-color: #75a3a3;padding: 5px;">
+                                <h4 style="color:#ccffcc;"><strong>Retailer List</strong></h4>
+                                </div>
+                            <table style="box-shadow: 2px 2px grey;" id="retailers" class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                              <tr>
+                                <td class="chat-closed2" style="color:green;"><img class="image w3-circle" src="james.jpg" style="height:30px;"></img>  Walmart </td>
+                              </tr>
+                              <tr>
+                                <td style="color:red;"><img class="image w3-circle" src="james.jpg" style="height:30px;"></img>  Costco  </td>
+                              </tr>
+                              <tr>
+                                <td class="chat-closed2" style="color:green;"><img class="image w3-circle" src="james.jpg" style="height:30px;"></img>  BestBuy </td>
+                              </tr>
+                              <tr>
+                                    <td class="chat-closed2" style="color:red;"><img class="image w3-circle" src="james.jpg" style="height:30px;"></img>  WholeFoods</td>
+                              </tr>
+                              <tr>
+                                  <td style="color: lightgrey;">
+                                    <span>View All Members<button class="w3-button w3-rectangle w3-red" style="float:right;">+</button></span>
+                                  </td>
+                              </tr>
+                            </table>
+                    </div> 
+                  </div>
+                  
+                  
+                </div>
+               
+        </div>
+              
+ 
+  
+  <!-- End page content -->
+</div>
+
+<script src="todojs.js"></script>
+<script>
+
+//to do list
+// Create a "close" button and append it to each list item
+
+//notification
+var el = document.querySelector('.notification');
+  
+    el.setAttribute('data-count', 1);   
+    el.offsetWidth = el.offsetWidth;
+    el.classList.add('notify');
+    el.classList.add('show-count');
+
+//logout alert
+function show_alert() {
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+}
+
+//to do list
+
+
+//slide show 
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Dark", "Premelted", "SemiSweet", "White", "Milk", "BitterSweet"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12,14, 12, 13, 16, 10,9],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange', 'brown',
+                'yellow',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+
+legend: {
+    display: false,
+},
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Organic", "Vegan", "Flavoured","Premium"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","pink"],
+        data: [24,22,34,20]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+
+    ,
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Melys", "Dulce", "Marvel"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [41,39,20],
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      },
+legend: {
+    labels: {
+        fontSize: 12
+    }
+}
+    }
+});
+
+//new nav
+function myFunctionNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: ["Q1","Q2","Q3","Q4"],
+    datasets: [{
+        data: [60,70,138,170],
+        label: "Sales Growth (%)",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+    },
+legend: {
+    display: false,
+}
+  }
+});
+
+
+
+var oilCanvas = document.getElementById("oilChart");
+var oilCanvas2 = document.getElementById("oilChart2");
+var oilCanvas3 = document.getElementById("oilChart3");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var oilData = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [133.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData2 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [53.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var oilData3 = {
+    labels: [
+
+    ],
+    datasets: [
+        {
+            data: [90.3, 1186.2],
+            backgroundColor: [
+                "red",
+                "green",
+              
+            ],
+            borderColor: "black",
+            borderWidth: 0
+        }]
+};
+
+var chartOptions = {
+  rotation: Math.PI,
+  cutoutPercentage: 50,
+  circumference: 2*Math.PI,
+  legend: {
+    position: 'left'
+  },
+  animation: {
+    animateRotate: false,
+    animateScale: true
+  },
+ tooltips: {
+         enabled: false
+    }
+
+};
+
+var pieChart = new Chart(oilCanvas, {
+  type: 'doughnut',
+  data: oilData,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas2, {
+  type: 'doughnut',
+  data: oilData2,
+  options: chartOptions
+});
+var pieChart = new Chart(oilCanvas3, {
+  type: 'doughnut',
+  data: oilData3,
+  options: chartOptions
+});
+
+
+	
+</script>
+</body>
+</html>

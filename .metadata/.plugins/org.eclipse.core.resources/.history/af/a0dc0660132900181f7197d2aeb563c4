@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>Retailer Calendar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="fa.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+a, u {
+    text-decoration: none;
+}
+
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 100%;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+#mainselection select {
+   border: 0;
+   color: #EEE;
+   background: transparent;
+   font-size: 20px;
+   font-weight: bold;
+   padding: 2px 10px;
+   width: 378px;
+   *width: 350px;
+   *background: #58B14C;
+   -webkit-appearance: none;
+}
+
+#mainselection {
+   overflow:hidden;
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px #330033;
+   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+select#soflow, select#soflow-color {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}
+
+select#soflow-color {
+   color: #fff;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+.image{
+  position: relative;
+}
+.image a{
+  display: block;      
+  position: absolute;
+}
+
+//new nav
+.topnav {
+  overflow: hidden;
+  background-color: #b87c51;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 17px 14px;
+  text-decoration: none;
+
+}
+.topnav a:hover {
+  background-color: #d48d5a;
+  color: black;
+}
+.active {
+  background-color: #b87c51;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+#logo{
+display:none;
+}
+#lognav{float:left;width:33%;}
+}
+#calm{outline: 1px solid teal;
+        outline-offset: -18px;}
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+#lognav{float:left;}
+#lognav3{display:none;}
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+#calm{width:90%;outline: 0px solid teal;
+        outline-offset: -1px;}
+ .topnav input[type=text] {
+        float: none;
+        display: none;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+	
+    }
+}
+.topnav input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+width:40%;
+ -moz-border-radius:20px; /* Firefox */
+    -webkit-border-radius: 20px; /* Safari, Chrome */
+    -khtml-border-radius: 20px; /* KHTML */
+    border-radius: 20px; /* CSS3 */
+    behavior:url("border-radius.htc");
+}
+
+.green   { background-color: #b87c51; }
+.green select   { background-color:#b87c51;color:white; }
+
+
+//update form
+* {
+    box-sizing: border-box;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #b87c51;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.chat-box {
+    position:fixed;
+    right:15px;
+    bottom:0;
+    box-shadow:0 0 0.1em #000;
+
+}
+
+.chat-closed {
+    width: 250px;
+    height: 35px;
+    background: #2196F3;
+    line-height: 35px;
+    font-size: 18px;
+    text-align: center;
+    border:1px solid #777;
+    color:white;
+}
+
+.chat-header {
+    width: 250px;
+    height: 35px;
+    background: #2196F3;
+    line-height: 33px;
+    text-indent: 20px;
+    border:1px solid #777;
+    border-bottom:none;
+color:white;
+}
+
+.chat-content{
+    width:250px;
+    height:300px;
+    background:#ffffff;
+    border:1px solid #777;
+    word-wrap: break-word;
+}
+
+.box{
+    width:10px;
+    height:10px;
+    background:green;
+    float:left;
+    position:relative;
+    top: 11px;
+    left: 10px;
+    border:1px solid #ededed;
+}
+ 
+.hide {
+    display:none;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    height: 150px;
+    width: 300px;
+    padding: 20px;   
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #b87c51;
+}
+
+.button1:hover {
+    background-color: #b87c51;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  margin: 50px;  
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: center;
+    height:60px;
+}
+td{
+	font-weight:bold;
+	color:white;
+}
+th { 
+       border: 1px solid white;
+}
+
+tr:nth-child(odd){background-color: white}
+
+th {
+    background-color:teal;
+    color: white;
+}
+.eventbtn {
+
+	background-color: #ffa64d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+.dashboard{
+ 	background-color: purple;outline: solid 22px black;
+height:36vh;
+	width:91%;
+margin-top:10%;
+	color:white;
+	padding:20px;
+   
+}
+
+.dashboard2{
+outline: solid 22px black;
+ 	background-color: teal;
+	margin-top:10%;
+	height:36vh;
+margin-bottom:10%;
+	width:91%;
+	color:white;
+	padding:20px;
+   
+}
+//
+th, td { min-width: 200px; }
+
+//search icon 
+
+.mainLoginInput{
+  
+}
+
+.mainLoginInput::-webkit-input-placeholder { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+
+color: #b87c51;
+}
+
+.mainLoginInput::-moz-placeholder  { 
+font-family: FontAwesome;
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+.mainLoginInput:-ms-input-placeholder  { 
+font-family: "Raleway", sans-serif
+font-weight: normal;
+overflow: visible;
+vertical-align: top;
+display: inline-block !important;
+}
+
+
+
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+//new nav
+<div class="w3-bar w3-top w3-large" style="background-color:#b87c51;z-index:4;color:white">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+ <a href="retailer.html"><span class="w3-bar-item w3-left"><img src="jasmine.png" style="height:44px"></img></span></a>
+<div class="topnav dropdown" id="myTopnav">
+<li style="font-size:28px !important;list-style-type: none;" class="dropdown">  
+  <a href="retailer.html" style="font-size:17px !important;">Dashboard</a>
+  <a href="#" style="font-size:17px !important;">Products</a><a href="retailerassets.html" style="font-size:17px !important;background-color:#994d00">Assets</a>
+  <a href="#" style="font-size:17px !important;">POSM</a></div>
+  <input class="mainLoginInput" type="text" placeholder="&#61442; Search" style="width:30%;margin-top:10px;" name="search">
+   
+   <a id ="lognav" href="#" class="fa fa-sign-out" style="height:100%;padding: 21px 18px;float:right;color:white" onclick="show_alert()"></a>
+<a href="cvmike.html"><div class="tooltip w3-round-xxlarge" style="margin-top:7px;padding: 1px 18px 1px 0px;height:46px;background-color:#d19c60;float:right;color:white;font-size:18px"><img class="image w3-circle" src="mike.jpg" style="height:46px;"></img> Mike Philip</div></a>
+
+</div>
+<!-- Sidebar/menu -->
+
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="width:100%;margin-left:10px;margin-top:43px;">
+
+<div id="calm" style="overflow-x:auto;" 	class="w3-container w3-twothird" >
+		<hr>
+
+		<table class="w3-container" style="overflow-x:auto;width:100%;">
+<h6 style="text-align:center;"><b>CALENDAR</b></h6>
+  		<tr style="overflow-x:auto;">
+    		<th style="border:1px solid black">JAN 22</th>
+    		<th style="border:1px solid black">JAN 29</th>
+    		<th style="border:1px solid black">JAN 25</th>
+  		<th style="border:1px solid black">FEB 05</th>
+    		<th style="border:1px solid black">FEB 12</th>
+    		<th style="border:1px solid black">FEB 19</th>
+		<th style="border:1px solid black">MAR 06</th>
+    		<th style="border:1px solid black">MAR 19</th>
+    		<th style="border:1px solid black">MAR 22</th>
+		</tr>
+  		<tr>
+    		<td  colspan = "2" class = "eventbtn" onclick="window.location.href='#'">NEW YEAR PROMOTION</td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td></td>
+		<td></td>
+		<td></td>
+
+  		
+		</tr>
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td colspan = "2" class = "eventbtn" onclick="window.location.href='retailerpromo.html'">SUMMER PROMO</td>
+		<td></td>  		
+		</tr>
+		
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td colspan = "3" class = "eventbtn" >BIG FESTIVAL</td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td></td>
+		
+		</tr>
+
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td></td>
+		<td colspan = "2" class = "eventbtn" onclick="window.location.href='#'">ANNIVERSARY PROMO</td>
+  		
+		</tr>
+
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td></td>
+		<td></td>
+		<td></td>
+  		
+		</tr>
+
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td colspan = "2" class = "eventbtn" onclick="window.location.href='#'">V DAY SPECIAL</td>
+		<td></td>
+  		<td></td>
+		<td></td>
+  		
+		</tr>
+
+
+		
+
+		<tr>
+    		<td></td>
+    		<td></td>
+    		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+  		<td></td>
+		<td></td>
+		<td></td>
+  		
+		</tr>
+
+		
+
+
+		</table>
+
+
+	
+</div>
+
+<div class="w3-third w3-container" >
+<div class= "dashboard w3-container w3-full">
+<div><h6><b>Mike Philip</b></h6>
+<h7>Costco Retail</h7>
+<br \><br \>
+<h5>Notifications</h5>
+	<h7>Approval Required - Mary Jane</h7></br>
+<h7>Approval Required - Peter Parker</h7></br>
+</div></div>
+<div class= "dashboard2">
+<h5>Select Cycle</h5>
+<select style="width:200px">
+  <option value="volvo">Q1 2018</option>
+  <option value="saab">Q2 2018</option>
+  <option value="mercedes">Q3 2018</option>
+
+</select>
+</br>
+<h5>View Calenders</h5>
+<form action="">
+<input type="checkbox" name="cal" value="hq"><h7>HQ</h7><br>
+<input type="checkbox" name="cal" value="regional"><h7>Regional</h7><br>
+<input type="checkbox" name="cal" value="local"><h7>Local</h7>
+</form>
+</br>	
+</div>
+
+</div></div></div>    
+                  
+
+                  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+                 
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+//logout alert
+function show_alert() {
+
+  swal({
+  title: "Logged Out",
+  text: "You have succesfully logged out",
+  type: 'success',
+}).then(function() {
+    window.location = "index.html";
+})
+    
+}
+
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999],
+    datasets: [{
+        data: [6,3,2,2,7,26,82,172,312],
+        label: "Sales Growth",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+      text: 'World population per region (in millions)'
+    }
+  }
+});
+
+
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Jan-Mar", "Apr-Jun", "Jul-Sep", "Oct-Dec"],
+        datasets: [{
+            label: '% of Growth',
+            data: [12, 12, 13, 16, 10,],
+            backgroundColor: [
+                '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange',
+            ],
+            borderColor: [
+                          '#3e95cd',
+                '#3cba9f',
+                '#8e5ea2',
+   'orange',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+     scales: {
+    xAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }
+            }],
+    yAxes: [{
+                gridLines: {
+                    color: "rgba(0, 0, 0, 0)",
+                }   
+            }]
+    }
+    }
+});
+
+
+new Chart(document.getElementById("pie-chart2"), {
+    type: 'pie',
+    data: {
+      labels: ["Prod 1", "Prod 2", "Prod 3"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [247,74,433]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+    }
+});
+
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Prod 1", "Prod 2", "Prod 3"],
+      datasets: [{
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        data: [2478,734,433]
+      }]
+    },
+    options: {
+      title: {
+        display: false,
+      }
+    }
+});
+
+//new nav
+function myFunctionNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+//chat
+$(document).ready(function(){
+    $(".chat-closed").on("click",function(e){
+        $(".chat-header,.chat-content").removeClass("hide");
+        $(this).addClass("hide");
+    });
+
+    $(".chat-header").on("click",function(e){
+        $(".chat-header,.chat-content").addClass("hide");
+        $(".chat-closed").removeClass("hide");
+    });
+});
+ var me = {};
+me.avatar = "blue.jpg";
+
+var you = {};
+you.avatar = "orange.png";
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}            
+
+//-- No use time. It is a javaScript effect.
+function insertChat(who, text, time){
+    if (time === undefined){
+        time = 0;
+    }
+    var control = "";
+    var date = formatAMPM(new Date());
+    
+    if (who == "me"){
+        
+        control = '<li style="width:100%">' +
+                        '<div class="msj macro">' +
+                        '<div class="avatar"><img class="img-circle" style="width:100%;" src="'+ me.avatar +'" /></div>' +
+                            '<div class="text text-l">' +
+                                '<p>'+ text +'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</li>';                    
+    }else{
+        control = '<li style="width:100%;">' +
+                        '<div class="msj-rta macro">' +
+                            '<div class="text text-r">' +
+                                '<p>'+text+'</p>' +
+                                '<p><small>'+date+'</small></p>' +
+                            '</div>' +
+                        '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="'+you.avatar+'" /></div>' +                                
+                  '</li>';
+    }
+    setTimeout(
+        function(){                        
+            $("ul").append(control);
+
+        }, time);
+    
+}
+
+function resetChat(){
+    $("ul").empty();
+}
+
+$(".mytext").on("keyup", function(e){
+    if (e.which == 13){
+        var text = $(this).val();
+        if (text !== ""){
+            insertChat("me", text);              
+            $(this).val('');
+        }
+                  if (text == "hi"){
+            insertChat("you", "Hello Kasyapa! I am Rishi from Cooper.",2000);              
+            $(this).val('');
+        }  }
+});
+
+//-- Clear Chat
+resetChat();
+
+</script>
+</body>
+</html>
