@@ -2,7 +2,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html>
 <title>CPG Channel Collaboration</title>
@@ -11,9 +10,8 @@
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="cordova.js"></script>
+<script src="jquery.min.js"></script>
+<script src="sweetalert.min.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -22,9 +20,8 @@ body, html {
     line-height: 1.8;
 }
 h1{font-size:40px;}
-#jdiv{margin-left:20%;width:100%}
 #small{font-size:25px;}
-#jasimage{display:block;margin-left:40%}
+#jasimage{display:block;}
 #big1{display:none;}
 .container {
     padding: 16px;
@@ -43,7 +40,7 @@ h1{font-size:40px;}
 .bgimg-1 {
     background-image: url('images/main.jpg');
     min-height: 100%;
- opacity: 0.8;
+ opacity: 0.9;
 }
 
 
@@ -65,7 +62,6 @@ h1{font-size:40px;}
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 720px) {
 #smalllogo{visibility:visible;}
-#jdiv{margin-left:0%;width:100%}
 #big1{display:block;}
     .bgimg-1, .bgimg-2, .bgimg-3 {
         background-attachment: scroll;
@@ -81,11 +77,7 @@ form {border: 3px solid #f1f1f1;}
 #jasimage{height:70px;}
 #jasimage2{height:70px;}
 
-#colimg{    
-    margin-left: -41%;
 
-    /* -webkit-border-end-width: medium; */
-   }
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -101,7 +93,7 @@ button {
 z-axis:+2;
 box-shadow:1px 1px 1px 1px brown;    
 color: white;
-    padding: 10px 20px;
+    padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
@@ -133,9 +125,9 @@ img.avatar {
 
 
 span.psw {
-    float: right;
-   
-   padding-right:70px;
+    float: left;
+    padding-top: 16px;
+   padding-left:10px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -150,7 +142,6 @@ span.psw {
    .container{
 	width:100%;
 	}
-#jasimage{display:none;}
 
 #smalllogo{display:block;}
 }
@@ -166,7 +157,7 @@ color:white;
    background: transparent;
    border: none;
    //padding: 5px; /* If you add too much padding here, the options won't show in IE */
-   width: 70%;
+   width: 100%;
 
 }
 #mainselection select {
@@ -234,13 +225,6 @@ select#soflow-color {
 .green   { color:white;}
 .green select   {background-color:#b87c51;color:white; }
 #smalllogo{display:none;z-index:-3;}
-
-.assigncenter {
-    width: 100%;
-    margin-left: 100px;
-    padding: 10px;
-}
-
 </style>
 <body>
 
@@ -277,26 +261,42 @@ onclick="toggleFunction()" title="Toggle Navigation Menu">
 
 
 <img class="w3-display-middle"  id ="jasimage1" src="images/jasmine2.png" style="height:200px;" alt="Avatar">
-<p style=" font-size: 18px !important;text-shadow: 1px 1px lightgrey;" class="w3-center w3-hide-large w3-display-middle w3-medium w3-animate-opacity"><br><br><br><br><br><br><br><br><b>CPG Digital <br>Channel Collaboration Platform</b><br><b>from<b><br><b>Digital Solutions & Offerings Team</b></p>
-    <span id="big" style="color:black;text-shadow: 2px 2px grey;margin:20px;padding:20px; line-height: 120%;" class="w3-mobile w3-center w3-xlarge w3-animate-opacity w3-hide-small"><br><br><br><br><br><br><br><br><br><br><h1 style="margin:12px"><br><b>CPG Digital Channel Collaboration Platform<br><span id="small"  style="margin:0px;padding:0px;line-height: 130%;">from<br> Digital Solutions & Offerings Team</span>
+<p style=" font-size: 18px !important;text-shadow: 1px 1px lightgrey;" class="w3-center w3-hide-large w3-display-middle w3-medium 
+
+w3-animate-opacity"><br><br><br><br><br><br><br><br><b>CPG Digital <br>Channel Collaboration 
+
+Platform</b><br><b>from<b><br><b>Digital Solutions & Offerings Team</b></p>
+    <span id="big" style="color:black;text-shadow: 2px 2px grey;margin:20px;padding:20px; line-height: 120%;" class="w3-mobile w3-
+
+center w3-xlarge w3-animate-opacity w3-hide-small"><br><br><br><br><br><br><br><br><br><br><h1 
+
+style="margin:12px"><br><b>CPG Digital Channel Collaboration Platform<br><span id="small"  
+
+style="margin:0px;padding:0px;line-height: 130%;">from<br> Digital Solutions & Offerings Team</span>
 
 
- <span id="big1" style="display:none;color:white;text-shadow: 2px 2px black;margin:20px;padding:20px; line-height: 120%;" class="w3-center w3-xlarge w3-animate-opacity "><br><br><br><br><br><br><br><br><br><br><h1 style="margin:12px"><span id="small"  style="margin:0px;padding:0px;line-height: 130%;">from<br> Digital Solutions & Offerings Team</span>
+ <span id="big1" style="display:none;color:white;text-shadow: 2px 2px black;margin:20px;padding:20px; line-height: 120%;" class="w3
+
+-center w3-xlarge w3-animate-opacity "><br><br><br><br><br><br><br><br><br><br><h1 style="margin:12px"><span 
+
+id="small"  style="margin:0px;padding:0px;line-height: 130%;">from<br> Digital Solutions & Offerings Team</span>
 
   </div>
   <div id ="smalllogo" class="w3-display-middle" >
-    <span class="w3-center w3-padding-large w3-xlarge w3-animate-opacity"><img id ="jasimage" src="images/jasmine.png" alt="Avatar"></span>
-	
+    <span class="w3-center w3-padding-large w3-xlarge w3-animate-opacity"><img id ="jasimage" src="images/jasmine.png" 
+
+alt="Avatar"></span>
   </div>
 </div>
 <!-- Container (Login Section) -->
 <form name="loginForm">
 <div class="w3-content w3-container w3-padding-32" id="login" align="center">
-
-   <div class="w3-container"><br>
-    <img style="" id ="jasimage" src="images/jasmine.png" alt="Avatar">
-  </div><br>
-<div id="jdiv" style="">
+<div><br>
+    <img id ="jasimage" src="images/jasmine.png" alt="Avatar">
+  </div>
+<div >
+  <div class="w3-full container" >
+<p><b>Select login type</b></p>
 <div class="w3-full styled-select green rounded" >
 <select style="height:52px;padding: 12px 20px;" id ="emp">
     <option style="height:52px;padding: 12px 20px;">CPG Employee</option>
@@ -304,20 +304,20 @@ onclick="toggleFunction()" title="Toggle Navigation Menu">
     <option style="height:52px;padding: 12px 20px;">Retailer</option>
  </select>
 </div>
-    <div class="w3-full"> <input style="width:70%" type="text" placeholder="Enter Username" id="funame" required></div>
+
+    <div class="w3-full"> <input style="width:100%" type="text" placeholder="Enter Username" id="funame" required></div>
 
 
-    <div class="w3-full"><input style="width:70%" type="password" placeholder="Enter Password" id="fpsw" required></div>
-	<label>
-      <input type="checkbox" name="remember"> Remember me
-    </label>
-	
-    <span class="psw"><a href="#">Forgot password?</a></span>
-    <button type="reset" style="background-color:#b87c51;margin:4% 0% 0% 0%;width:45%" onClick="jasmineLogin()">Login</button>
+    <div class="w3-full"><input style="width:100%" type="password" placeholder="Enter Password" id="fpsw" required></div>
+<span class="psw"><a href="#">Forgot password?</a></span>
+    <button type="reset" style="background-color:#b87c51;margin:4% 0% 0% 16%;width:40%" onClick="jasmineLogin
+
+()">Login</button>
+    
+
   </div></div>
 </form></div>
-<div style="height: -webkit-fill-available;">
-</div>
+
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact" style="width:100%;">
 <h3 class="w3-center">SIGN UP</h3>
@@ -384,13 +384,13 @@ function jasmineLogin(){
 	var un = document.getElementById("funame").value;
 	var pw = document.getElementById("fpsw").value;
 	var em = document.getElementById("emp").options.selectedIndex;
-	if(un=="sofia@dsot.com" && pw =="admin123" && em =="0"){
+	if(un=="sofia@dsot.com" && pw =="sofia@123" && em =="0"){
 	window.location.href = "jasmine.html";
 	}
-	else if(un=="james@dsot.com" && pw =="admin123" && em =="1"){
+	else if(un=="james@dsot.com" && pw =="james@123" && em =="1"){
 	window.location.href = "distributor.html";
 	}
-	else if(un=="mike@dsot.com" && pw =="admin123" && em =="2"){
+	else if(un=="mike@dsot.com" && pw =="mike@123" && em =="2"){
 	window.location.href = "retailer.html";
 	}
 	else{	
